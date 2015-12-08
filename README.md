@@ -5,7 +5,12 @@ A WordPress plugin that brings DI Container, Event Dispatcher to WordPress.
 ## Features
 
 *   DI Container ([Pimple](https://github.com/silexphp/Pimple))
-*   Event Dispatcher ([Symfony EventDispatcher](https://github.com/symfony/event-dispatcher))
+*   Event Dispatcher ([Symfony EventDispatcher Component](https://github.com/symfony/event-dispatcher))
+
+## Requirements
+
+*   [Pimple](https://github.com/silexphp/Pimple)
+*   [Symfony EventDispatcher Component](https://github.com/symfony/event-dispatcher)
 
 ## Installation
 
