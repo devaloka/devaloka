@@ -16,3 +16,13 @@ A WordPress plugin that brings DI Container, Event Dispatcher to WordPress.
     ```
 
 2.  Move `loader/00-devaloka-loader.php` into `<ABSPATH>wp-content/mu-plugins/`.
+
+## Components
+
+*   Event Converter
+*   Translation
+*   Templating
+*   View Component
+*   WordPress Service Provider
+*   Plugin
+*   Theme
