@@ -17,7 +17,7 @@ A WordPress plugin that brings DI Container, Event Dispatcher to WordPress.
 1.  Install via Composer.
 
     ```sh
-    composer require devaloka/devaloka dev-master
+    composer require devaloka/devaloka
     ```
 
 2.  Move `loader/00-devaloka-loader.php` into `<ABSPATH>wp-content/mu-plugins/`.
