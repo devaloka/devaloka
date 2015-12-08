@@ -129,4 +129,21 @@ class EventDispatcher implements EventDispatcherInterface
             }
         }
     }
+
+    public function getListenerPriority($eventName, $listener)
+    {
+        if (!isset($GLOBALS['wp_filter']) || !isset($GLOBALS['wp_filter'][$eventName])) {
+            return null;
+        }
+
+        foreach ($GLOBALS['wp_filter'][$eventName] as $priority => $functions) {
+            $function = _wp_filter_build_unique_id($eventName, $listener, $priority);
+
+            if (isset($functions[$function])) {
+                return $priority;
+            }
+        }
+
+        return null;
+    }
 }
