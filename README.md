@@ -25,7 +25,7 @@ A WordPress plugin that brings DI Container, Event Dispatcher to WordPress.
 ## Components
 
 *   [Event Converter](https://github.com/devaloka/devaloka-event-converter)
-*   Translation
+*   [Translation](https://github.com/devaloka/devaloka-translation)
 *   Templating
 *   View Component
 *   WordPress Service Provider
