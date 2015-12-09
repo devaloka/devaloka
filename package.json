@@ -33,7 +33,8 @@
         "url" : "https://github.com/devaloka/devaloka.git"
     },
     "scripts"        : {
-        "lint": "mdast -u mdast-lint README.md"
+        "lint"       : "mdast -u mdast-lint README.md",
+        "lint-travis": "mdast -f -u mdast-lint README.md"
     },
     "devDependencies": {
         "mdast"     : "~2.3.0",

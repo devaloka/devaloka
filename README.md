@@ -1,4 +1,4 @@
-# Devaloka
+# Devaloka [![Build Status](https://travis-ci.org/devaloka/devaloka.svg?branch=master)](https://travis-ci.org/devaloka/devaloka)
 
 A WordPress plugin that brings DI Container, Event Dispatcher to WordPress.
 
