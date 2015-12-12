@@ -32,3 +32,7 @@ A WordPress plugin that brings DI Container, Event Dispatcher to WordPress.
 *   [Transient](https://github.com/devaloka/devaloka-transient)
 *   [Plugin](https://github.com/devaloka/devaloka-plugin)
 *   [Theme](https://github.com/devaloka/devaloka-theme)
+
+## Plugins
+
+*   [Query Exporter](https://github.com/devaloka/devaloka-query-exporter)
