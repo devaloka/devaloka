@@ -71,7 +71,7 @@ class NullObject implements \ArrayAccess, \Countable, \Iterator, \Serializable, 
 
     public function jsonSerialize()
     {
-        return new \stdClass;
+        return new \stdClass();
     }
 
     public function current()

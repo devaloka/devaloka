@@ -28,7 +28,7 @@ class EventDispatcherProvider implements ServiceProviderInterface
         $container->add(
             'event_dispatcher',
             function (Container $container) {
-                return new $container['event_dispatcher.class'];
+                return new $container['event_dispatcher.class']();
             }
         );
     }
