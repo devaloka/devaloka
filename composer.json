@@ -33,7 +33,7 @@
         "source": "https://github.com/devaloka/devaloka"
     },
     "require"          : {
-        "php"                     : ">=5.4.0",
+        "php"                     : ">=5.5.9",
         "composer/installers"     : "~1.0",
         "pimple/pimple"           : "~3.0",
         "symfony/event-dispatcher": "~3.0"
