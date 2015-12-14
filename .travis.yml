@@ -17,7 +17,7 @@ install:
   - npm install
 
 script:
-  - npm run-script lint-travis                         ｊ
+  - npm run-script lint-travis
 
 cache:
   directories:
