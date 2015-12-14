@@ -17,8 +17,13 @@ install:
   - npm install
 
 script:
-  - npm run-script lint-travis
+  - npm run-script lint-travis                         ｊ
 
 cache:
   directories:
     - node_modules
+
+notifications:
+  email:
+    on_success: change
+    on_failure: change
