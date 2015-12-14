@@ -38,6 +38,11 @@
         "pimple/pimple"               : "~3.0",
         "symfony/event-dispatcher"    : "~3.0"
     },
+    "require-dev"      : {
+        "phpunit/phpunit"       : "^4.8 || ^5.1",
+        "mockery/mockery"       : "^0.9.4",
+        "satooshi/php-coveralls": "~0.7.0"
+    },
     "archive"          : {
         "exclude": [
             ".gitignore",
@@ -48,7 +53,8 @@
             "npm-shrinkwrap.json",
             ".mdastrc",
             "composer.json",
-            ".travis.yml"
+            ".travis.yml",
+            "tests"
         ]
     },
     "extra"            : {

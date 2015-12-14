@@ -8,19 +8,67 @@ php:
   - '7.0'
   - hhvm
 
+env:
+  - WP_VERSION=4.3 WP_MULTISITE=0
+  - WP_VERSION=4.3 WP_MULTISITE=1
+  - WP_VERSION=4.4 WP_MULTISITE=0
+  - WP_VERSION=4.4 WP_MULTISITE=1
+
+matrix:
+  fast_finish: true
+  allow_failures:
+    - php: hhvm
+
 cache:
   directories:
     - node_modules
+    - $HOME/.composer/cache/files
 
 before_install:
   - npm config set spin false
   - npm install -g npm
+  - composer self-update
 
 install:
   - npm install
+  - composer install --prefer-source
+
+before_script:
+  - BUILD_PATH="$(pwd)"
+  - BUILD_DIR="$(basename "$BUILD_PATH")"
+  - BASE_PATH=/tmp
+  - WP_CORE_DIR=wordpress
+  - WP_CORE_PATH="$BASE_PATH/$WP_CORE_DIR"
+  - WP_TESTS_LIB_DIR=wordpress-tests-lib
+  - WP_TESTS_LIB_PATH="$BASE_PATH/$WP_TESTS_LIB_DIR"
+  - DB_NAME=wordpress_tests
+  - COMPONENT_DIR=mu-plugins
+  - LOADER_FILE=loader/00-devaloka-loader.php
+  - wget -nv -O "$BASE_PATH/wordpress-$WP_VERSION.tar.gz" "https://wordpress.org/wordpress-$WP_VERSION.tar.gz"
+  - mkdir -p "$WP_CORE_PATH"
+  - tar --strip-components=1 -zxmf "$BASE_PATH/wordpress-$WP_VERSION.tar.gz" -C "$WP_CORE_PATH"
+  - wget -nv -O "$WP_CORE_PATH/wp-content/db.php" https://raw.github.com/markoheijnen/wp-mysqli/master/db.php
+  - mkdir -p $WP_TESTS_LIB_PATH
+  - svn export --quiet "https://develop.svn.wordpress.org/tags/$WP_VERSION/tests/phpunit/includes/" "$WP_TESTS_LIB_PATH/includes"
+  - wget -nv -O "$WP_TESTS_LIB_PATH/wp-tests-config.php" "https://develop.svn.wordpress.org/tags/$WP_VERSION/wp-tests-config-sample.php"
+  - sed -i "s:dirname( __FILE__ ) . '/src/':'$WP_CORE_PATH/':" "$WP_TESTS_LIB_PATH/wp-tests-config.php"
+  - sed -i "s/youremptytestdbnamehere/$DB_NAME/" "$WP_TESTS_LIB_PATH/wp-tests-config.php"
+  - sed -i "s/yourusernamehere/travis/" "$WP_TESTS_LIB_PATH/wp-tests-config.php"
+  - sed -i "s/yourpasswordhere//" "$WP_TESTS_LIB_PATH/wp-tests-config.php"
+  - mysqladmin create "$DB_NAME" --user="root"
+  - mv vendor $WP_CORE_PATH/
+  - if [[ -e wp-content ]]; then mv -f wp-content $WP_CORE_PATH/; fi
+  - mkdir -p "$WP_CORE_PATH/wp-content/$COMPONENT_DIR/$BUILD_DIR"
+  - cp -rf "$BUILD_PATH" "$WP_CORE_PATH/wp-content/$COMPONENT_DIR/"
+  - cp -rf "$BUILD_PATH/$LOADER_FILE" "$WP_CORE_PATH/wp-content/$COMPONENT_DIR/"
+  - cd "$WP_CORE_PATH/wp-content/$COMPONENT_DIR/$BUILD_DIR"
 
 script:
   - npm run-script lint-travis
+  - phpunit --colors --verbose --coverage-clover build/logs/clover.xml
+
+after_script:
+  - "$WP_CORE_PATH/vendor/bin/coveralls --verbose --root_dir ."
 
 notifications:
   email:
