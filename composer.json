@@ -2,7 +2,7 @@
     "name"             : "devaloka/devaloka",
     "description"      : "A WordPress plugin brings DI Container, Event Dispatcher to WordPress",
     "version"          : "0.5.0",
-    "type"             : "wordpress-muplugin",
+    "type"             : "devaloka-muplugin",
     "keywords"         : [
         "wordpress",
         "plugin",
@@ -33,10 +33,10 @@
         "source": "https://github.com/devaloka/devaloka"
     },
     "require"          : {
-        "php"                     : ">=5.5.9",
-        "composer/installers"     : "~1.0",
-        "pimple/pimple"           : "~3.0",
-        "symfony/event-dispatcher": "~3.0"
+        "php"                         : ">=5.5.9",
+        "devaloka/mu-plugin-installer": "~0.1.0",
+        "pimple/pimple"               : "~3.0",
+        "symfony/event-dispatcher"    : "~3.0"
     },
     "archive"          : {
         "exclude": [
@@ -47,5 +47,8 @@
             "npm-shrinkwrap.json",
             ".mdastrc"
         ]
+    },
+    "extra"            : {
+        "installer-loader": "loader/00-devaloka-loader.php"
     }
 }
