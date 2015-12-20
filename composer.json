@@ -45,7 +45,8 @@
             ".mailmap",
             ".editorconfig",
             "npm-shrinkwrap.json",
-            ".mdastrc"
+            ".mdastrc",
+            ".travis.yml"
         ]
     },
     "extra"            : {
