@@ -44,8 +44,10 @@
             ".gitattributes",
             ".mailmap",
             ".editorconfig",
+            "package.json",
             "npm-shrinkwrap.json",
             ".mdastrc",
+            "composer.json",
             ".travis.yml"
         ]
     },
