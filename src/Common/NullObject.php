@@ -15,7 +15,7 @@ namespace Devaloka\Common;
  *
  * @package Devaloka\Common
  */
-class NullObject implements \ArrayAccess, \Countable, \Iterator, \Serializable, \JsonSerializable
+class NullObject implements \ArrayAccess, \Countable, \Iterator, \JsonSerializable
 {
     public function __construct()
     {
@@ -57,16 +57,6 @@ class NullObject implements \ArrayAccess, \Countable, \Iterator, \Serializable, 
     public function __wakeup()
     {
         return $this;
-    }
-
-    public function serialize()
-    {
-        return serialize(null);
-    }
-
-    public function unserialize($serialized)
-    {
-        return null;
     }
 
     public function jsonSerialize()
