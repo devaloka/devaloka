@@ -6,6 +6,6 @@
 .editorconfig export-ignore
 package.json export-ignore
 npm-shrinkwrap.json export-ignore
-.mdastrc export-ignore
+.remarkrc export-ignore
 composer.json export-ignore
 .travis.yml export-ignore

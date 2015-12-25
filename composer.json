@@ -46,7 +46,7 @@
             ".editorconfig",
             "package.json",
             "npm-shrinkwrap.json",
-            ".mdastrc",
+            ".remarkrc",
             "composer.json",
             ".travis.yml"
         ]
