@@ -23,7 +23,7 @@ class NullObject implements \ArrayAccess, \Countable, \Iterator, \JsonSerializab
 
     public static function __callStatic($name, $arguments)
     {
-        return new NullObject();
+        return new static();
     }
 
     public function __invoke()
