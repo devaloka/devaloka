@@ -36,6 +36,10 @@ class NullObject implements \ArrayAccess, \Countable, \Iterator, \JsonSerializab
         return $this;
     }
 
+    public function __set($name, $value)
+    {
+    }
+
     public function __get($name)
     {
         return $this;

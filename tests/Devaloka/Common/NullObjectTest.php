@@ -38,6 +38,17 @@ class NullObjectTest extends PHPUnit_Framework_TestCase
         $this->assertInstanceOf('Devaloka\Common\NullObject', $null->property);
     }
 
+    public function testPropertyMutationShouldDoNothing()
+    {
+        $null = new NullObject();
+
+        $null->property = 'test';
+        $null['key']    = 'test';
+
+        $this->assertInstanceOf('Devaloka\Common\NullObject', $null->property);
+        $this->assertInstanceOf('Devaloka\Common\NullObject', $null['key']);
+    }
+
     public function testNullObjectShouldBeCastedToNullString()
     {
         $null = new NullObject();
