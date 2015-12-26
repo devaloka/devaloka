@@ -32,7 +32,7 @@ script:
   - phpunit --colors --verbose --coverage-clover build/logs/clover.xml
 
 after_script:
-  - "$WP_CORE_PATH/vendor/bin/coveralls --verbose --root_dir ."
+  - vendor/bin/coveralls --verbose
 
 notifications:
   email:
