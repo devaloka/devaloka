@@ -67,7 +67,7 @@ class NullObjectTest extends PHPUnit_Framework_TestCase
     {
         $null = new NullObject();
 
-        $this->assertEquals('O:26:"Devaloka\Common\NullObject":0:{}', serialize($null));
+        $this->assertSame('O:26:"Devaloka\Common\NullObject":0:{}', serialize($null));
     }
 
     public function testSerializedNullObjectShouldBeUnserializedAsANullObject()
