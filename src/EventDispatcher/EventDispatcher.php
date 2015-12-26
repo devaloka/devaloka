@@ -33,9 +33,6 @@ class EventDispatcher implements EventDispatcherInterface
             $event = new WordPressEvent();
         }
 
-        $event->setDispatcher($this);
-        $event->setName($eventName);
-
         if (!$this->hasListeners($eventName)) {
             if ($event->hasParameter(0)) {
                 $event->setReturnValue($event->getParameter(0));
