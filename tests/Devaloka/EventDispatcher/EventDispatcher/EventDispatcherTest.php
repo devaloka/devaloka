@@ -7,6 +7,12 @@ use Mockery;
 use PHPUnit_Framework_TestCase;
 use Symfony\Component\EventDispatcher\EventSubscriberInterface;
 
+/**
+ * Class EventDispatcherTest
+ *
+ * @package Tests\Devaloka\EventDispatcher
+ * @author Whizark <devaloka@whizark.com>
+ */
 class EventDispatcherTest extends PHPUnit_Framework_TestCase
 {
     /**
