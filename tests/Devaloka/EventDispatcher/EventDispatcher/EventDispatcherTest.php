@@ -30,7 +30,7 @@ class EventDispatcherTest extends PHPUnit_Framework_TestCase
         $this->markTestIncomplete('Currently, marked as incomplete.');
     }
 
-    public function testDispatchActionEventShouldDoNothingIfListenerDoesNotExist()
+    public function testDispatchActionEventShouldJustReturnEventItselfIfListenerDoesNotExist()
     {
         $dispatcher = new EventDispatcher();
         $eventName  = 'action';
