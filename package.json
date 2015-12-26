@@ -6,7 +6,9 @@
         "wordpress",
         "plugin",
         "pimple",
-        "event-dispatcher"
+        "event-dispatcher",
+        "di",
+        "event"
     ],
     "homepage"       : "https://github.com/devaloka/devaloka",
     "bugs"           : {
