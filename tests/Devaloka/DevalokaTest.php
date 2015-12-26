@@ -8,7 +8,7 @@ use PHPUnit_Framework_TestCase;
  * Class DevalokaTest
  *
  * @package Tests\Devaloka
- * @author Whizark
+ * @author Whizark <devaloka@whizark.com>
  */
 class DevalokaTest extends PHPUnit_Framework_TestCase
 {

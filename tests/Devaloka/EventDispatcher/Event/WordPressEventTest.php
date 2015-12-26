@@ -8,7 +8,7 @@ use PHPUnit_Framework_TestCase;
  * Class WordPressEventTest
  *
  * @package Tests\Devaloka\Common
- * @author Whizark
+ * @author Whizark <devaloka@whizark.com>
  */
 class WordPressEventTest extends PHPUnit_Framework_TestCase
 {

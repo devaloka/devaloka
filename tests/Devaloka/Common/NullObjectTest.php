@@ -8,7 +8,7 @@ use PHPUnit_Framework_TestCase;
  * Class NullObjectTest
  *
  * @package Tests\Devaloka\Common
- * @author Whizark
+ * @author Whizark <devaloka@whizark.com>
  */
 class NullObjectTest extends PHPUnit_Framework_TestCase
 {
