@@ -31,7 +31,7 @@ class WordPressEventTest extends PHPUnit_Framework_TestCase
         $event->getParameter(1);
     }
 
-    public function testSetParameterShouldReturnTheValueIfTheIndexExists()
+    public function testHasParameterShouldReturnTheValueIfTheIndexExists()
     {
         $event = new WordPressEvent();
 
@@ -40,7 +40,7 @@ class WordPressEventTest extends PHPUnit_Framework_TestCase
         $this->assertTrue($event->hasParameter(0));
     }
 
-    public function testSetParameterShouldReturnFalseIfTheIndexExist()
+    public function testHasParameterShouldReturnFalseIfTheIndexDoesNotExist()
     {
         $event = new WordPressEvent();
 
