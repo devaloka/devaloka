@@ -51,7 +51,7 @@ class EventDispatcherTest extends PHPUnit_Framework_TestCase
 
         $result = $dispatcher->dispatch($eventName, $actionEvent);
 
-        $this->assertInstanceOf('Symfony\Component\EventDispatcher\Event', $result);
+        $this->assertSame($actionEvent, $result);
     }
 
     public function testDispatchFilterEventShouldJustReturnEventItselfIfListenerDoesNotExist()
@@ -76,7 +76,7 @@ class EventDispatcherTest extends PHPUnit_Framework_TestCase
 
         $result = $dispatcher->dispatch($eventName, $filterEvent);
 
-        $this->assertInstanceOf('Symfony\Component\EventDispatcher\Event', $result);
+        $this->assertSame($filterEvent, $result);
     }
 
     public function eventListenerProvider()
