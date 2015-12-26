@@ -24,6 +24,13 @@ class NullObjectTest extends PHPUnit_Framework_TestCase
         $this->assertInstanceOf('Devaloka\Common\NullObject', $null());
     }
 
+    public function testMethodCallShouldReturnNullOjbect()
+    {
+        $null = new NullObject();
+
+        $this->assertInstanceOf('Devaloka\Common\NullObject', $null->method());
+    }
+
     public function testPropertyAccessShouldReturnNullObject()
     {
         $null = new NullObject();
