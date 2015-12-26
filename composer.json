@@ -60,8 +60,10 @@
             "npm-shrinkwrap.json",
             ".remarkrc",
             "composer.json",
-            ".travis.yml",
-            "tests"
+            "phpunit.xml.dist",
+            ".coveralls.yml",
+            "tests/",
+            ".travis.yml"
         ]
     },
     "extra"            : {
