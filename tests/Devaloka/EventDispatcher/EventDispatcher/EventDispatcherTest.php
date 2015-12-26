@@ -62,8 +62,8 @@ class EventDispatcherTest extends PHPUnit_Framework_TestCase
 
     public function testDispatchFilterEventShouldJustReturnEventItselfIfListenerDoesNotExist()
     {
-        $dispatcher  = new EventDispatcher();
-        $eventName   = 'filter';
+        $dispatcher = new EventDispatcher();
+        $eventName  = 'filter';
 
         Monkey::actions()->expectFired($eventName)->never();
         Monkey::filters()->expectApplied($eventName)->never();
