@@ -62,7 +62,7 @@ class DevalokaProvider implements ServiceProviderInterface, BootableProviderInte
         $locale     = get_locale();
         $localeFile = $directory . $domainPath . '/' . $locale . '.php';
 
-        if (validate_file($localeFile) === 0 && is_readable($localeFile)) {
+        if (is_readable($localeFile)) {
             require_once $localeFile;
         }
     }
