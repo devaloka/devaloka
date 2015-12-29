@@ -1,3 +1,18 @@
+<a name="0.5.2"></a>
+## [0.5.2](https://github.com/devaloka/devaloka/compare/v0.5.1...v0.5.2) (2015-12-29)
+
+
+### Bug Fixes
+
+* **EventDispatcher:** remove deprecated EventDispatcherInterface usage ([50af074](https://github.com/devaloka/devaloka/commit/50af074))
+* **NullObject:** property mutation should do nothing ([7d09b99](https://github.com/devaloka/devaloka/commit/7d09b99))
+* **NullObject:** remove unnecessary implementation of Serializable Interface ([86f5e15](https://github.com/devaloka/devaloka/commit/86f5e15))
+* **NullObject:** static call should return NullObject ([0de17b7](https://github.com/devaloka/devaloka/commit/0de17b7))
+* incorrect version number in plugin header comment ([6a5fad2](https://github.com/devaloka/devaloka/commit/6a5fad2))
+* remove unnecessary locale file validation ([77152dc](https://github.com/devaloka/devaloka/commit/77152dc))
+
+
+
 <a name="0.5.1"></a>
 ## [0.5.1](https://github.com/devaloka/devaloka/compare/v0.5.0...v0.5.1) (2015-12-19)
 
