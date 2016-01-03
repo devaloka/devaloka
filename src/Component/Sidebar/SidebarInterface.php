@@ -30,12 +30,9 @@ interface SidebarInterface
     public function getOptions();
 
     /**
-     * @return string
+     * @return string The Sidebar ID.
      */
     public function register();
 
-    /**
-     * @param string $id
-     */
     public function unregister();
 }
