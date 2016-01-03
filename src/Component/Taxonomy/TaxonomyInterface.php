@@ -33,4 +33,9 @@ interface TaxonomyInterface
      * @return null|\WP_Error WP_Error if errors, otherwise null.
      */
     public function register();
+
+    /**
+     * @return bool
+     */
+    public function unregister();
 }
