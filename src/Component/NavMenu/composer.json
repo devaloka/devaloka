@@ -1,0 +1,64 @@
+{
+    "name"             : "devaloka/nav-menu",
+    "description"      : "Interface, Trait and class(es) for WordPress NavMenu",
+    "type"             : "library",
+    "keywords"         : [
+        "wordpress",
+        "NavMenu",
+        "nav menu"
+    ],
+    "homepage"         : "https://github.com/devaloka/nav-menu",
+    "license"          : [
+        "MIT",
+        "GPL-2.0",
+        "GPL-3.0"
+    ],
+    "minimum-stability": "stable",
+    "authors"          : [
+        {
+            "name"    : "Whizark",
+            "email"   : "devaloka@whizark.com",
+            "homepage": "http://whizark.com",
+            "role"    : "Developer"
+        }
+    ],
+    "support"          : {
+        "email" : "devaloka@whizark.com",
+        "issues": "https://github.com/devaloka/devaloka/isssues",
+        "wiki"  : "https://github.com/devaloka/devaloka/wiki",
+        "source": "https://github.com/devaloka/nav-menu"
+    },
+    "require"          : {
+        "php": ">=5.5.9"
+    },
+    "require-dev"      : {
+        "squizlabs/php_codesniffer": "^2.5.0"
+    },
+    "autoload"         : {
+        "psr-4": {
+            "Devaloka\\Component\\NavMenu\\": ""
+        }
+    },
+    "scripts"          : {
+        "test"       : [
+            "php vendor/squizlabs/php_codesniffer/scripts/phpcs --colors"
+        ],
+        "test-travis": [
+            "php vendor/squizlabs/php_codesniffer/scripts/phpcs --colors"
+        ]
+    },
+    "archive"          : {
+        "exclude": [
+            ".gitignore",
+            ".gitattributes",
+            ".mailmap",
+            ".editorconfig",
+            "package.json",
+            "npm-shrinkwrap.json",
+            ".remarkrc",
+            "composer.json",
+            "phpcs.xml",
+            ".travis.yml"
+        ]
+    }
+}

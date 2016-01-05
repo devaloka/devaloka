@@ -49,7 +49,8 @@
         "devaloka/post-type": "self.version",
         "devaloka/taxonomy" : "self.version",
         "devaloka/sidebar"  : "self.version",
-        "devaloka/widget"   : "self.version"
+        "devaloka/widget"   : "self.version",
+        "devaloka/nav-menu" : "self.version"
     },
     "autoload-dev"     : {
         "psr-4": {
