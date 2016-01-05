@@ -4,10 +4,8 @@
     "type"             : "library",
     "keywords"         : [
         "wordpress",
-        "widget",
-        "term",
-        "category",
-        "tag"
+        "sidebar",
+        "widget"
     ],
     "homepage"         : "https://github.com/devaloka/widget",
     "license"          : [
