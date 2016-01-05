@@ -45,6 +45,12 @@
         "brain/monkey"             : "^1.2.1",
         "satooshi/php-coveralls"   : "^1.0.0"
     },
+    "replace"          : {
+        "devaloka/post-type": "self.version",
+        "devaloka/taxonomy" : "self.version",
+        "devaloka/sidebar"  : "self.version",
+        "devaloka/widget"   : "self.version"
+    },
     "autoload-dev"     : {
         "psr-4": {
             "Devaloka\\"       : "src/",
