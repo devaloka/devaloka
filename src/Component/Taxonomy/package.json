@@ -1,0 +1,40 @@
+{
+    "name"           : "@devaloka/taxonomy",
+    "version"        : "0.5.2",
+    "description"    : "Interface, Trait and class(es) for WordPress Taxonomy",
+    "keywords"       : [
+        "wordpress",
+        "taxonomy",
+        "term",
+        "category",
+        "tag"
+    ],
+    "homepage"       : "https://github.com/devaloka/taxonomy",
+    "bugs"           : {
+        "url": "https://github.com/devaloka/devaloka/isssues"
+    },
+    "license"        : "(MIT OR GPL-2.0 OR GPL-3.0)",
+    "author"         : {
+        "name" : "Whizark",
+        "email": "devaloka@whizark.com",
+        "url"  : "http://whizark.com"
+    },
+    "files"          : [
+        "./MIT-LICENSE.txt",
+        "./GPL-LICENSE.txt",
+        "./TaxonomyInterface.php",
+        "./TaxonomyTrait.php"
+    ],
+    "repository"     : {
+        "type": "git",
+        "url" : "https://github.com/devaloka/taxonomy.git"
+    },
+    "scripts"        : {
+        "lint"       : "remark -u remark-lint README.md",
+        "lint-travis": "remark -f -u remark-lint README.md"
+    },
+    "devDependencies": {
+        "remark"     : "^3.0.0",
+        "remark-lint": "^2.0.0"
+    }
+}
