@@ -1,5 +1,5 @@
 {
-    "name"             : "devaloka/devaloka-event-converter",
+    "name"             : "devaloka/post-type",
     "description"      : "Interface, Trait and class(es) for WordPress Post Type",
     "type"             : "library",
     "keywords"         : [
