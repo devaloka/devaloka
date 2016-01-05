@@ -1,6 +1,6 @@
 {
     "name"             : "devaloka/sidebar",
-    "description"      : "Interface, Trait and class(es) for WordPress Post Type",
+    "description"      : "Interface, Trait and class(es) for WordPress Sidebar",
     "type"             : "library",
     "keywords"         : [
         "wordpress",
