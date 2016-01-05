@@ -17,7 +17,7 @@ const extra   = require('./composer.json').extra;
  */
 function bumpTaskFactory(type) {
     return () => {
-        const packages       = ['composer.json', 'package.json', 'src/**/package.json'];
+        const packages       = ['composer.json', 'package.json', 'src/**/composer.json', 'src/**/package.json'];
         const plugin         = (pkg.main) ? [path.normalize(pkg.main)] : [];
         const loader         = (extra && extra['installer-loader']) ? [path.normalize(extra['installer-loader'])] : [];
         const plugins        = plugin.concat(loader);
@@ -28,10 +28,12 @@ function bumpTaskFactory(type) {
         const newVersion     = semver.inc(version, type);
         const versionPattern = (version + '').replace(/[-\/\\^$*+?.()|[\]{}]/g, '\\$&');
         const packageRegExp  = new RegExp('^(\\s*"version"\\s*:)\\s*"' + versionPattern + '"\\s*(,?)\\s*$', 'mg');
+        const depsRegExp     = new RegExp('^(\\s*"devaloka/[^"]+"\\s*:)\\s*"[~^]' + versionPattern + '"\\s*(,?)\\s*$', 'mg');
         const pluginRegExp   = new RegExp('^([ \\t\\/*#@]*Version:)\\s*' + versionPattern + '\\s*$', 'mg');
 
         gulp.src(target, {base: './'})
             .pipe(packageFilter)
+            .pipe(replace(depsRegExp, '$1 "~' + newVersion + '"$2'))
             .pipe(replace(packageRegExp, '$1 "' + newVersion + '"$2'))
             .pipe(packageFilter.restore)
             .pipe(pluginFilter)
