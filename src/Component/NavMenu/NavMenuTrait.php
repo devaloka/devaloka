@@ -36,6 +36,16 @@ trait NavMenuTrait
     abstract public function getDescription();
 
     /**
+     * Gets the default options for the menu.
+     *
+     * @return mixed[] The default options.
+     */
+    public function getDefaultOptions()
+    {
+        return [];
+    }
+
+    /**
      * Registers the menu.
      */
     public function register()

@@ -34,6 +34,13 @@ interface NavMenuInterface
     public function getDescription();
 
     /**
+     * Gets the default options for the menu.
+     *
+     * @return mixed[] The default options.
+     */
+    public function getDefaultOptions();
+
+    /**
      * Registers the menu.
      */
     public function register();
