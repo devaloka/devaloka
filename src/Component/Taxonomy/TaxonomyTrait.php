@@ -22,17 +22,24 @@ namespace Devaloka\Component\Taxonomy;
 trait TaxonomyTrait
 {
     /**
-     * @var string[]
+     * @var string[] The object types that belongs to the Taxonomy.
      */
     protected $objectTypes = [];
 
+    /**
+     * Gets the Taxonomy options.
+     *
+     * @return mixed[] The options.
+     */
     public function getOptions()
     {
         return [];
     }
 
     /**
-     * {@inheritDoc}
+     * Registers the Taxonomy.
+     *
+     * @return null|\WP_Error WP_Error if errors, otherwise null.
      */
     public function register()
     {
@@ -41,6 +48,11 @@ trait TaxonomyTrait
         return register_taxonomy($this->getName(), $this->objectTypes, $this->getOptions());
     }
 
+    /**
+     * Unregisters the Taxonomy.
+     *
+     * @return bool True on success, false on failure.
+     */
     public function unregister()
     {
         if (count($this->objectTypes) < 1) {

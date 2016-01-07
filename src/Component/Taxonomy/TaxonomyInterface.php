@@ -20,22 +20,30 @@ namespace Devaloka\Component\Taxonomy;
 interface TaxonomyInterface
 {
     /**
-     * @return string $taxonomy The taxonomy key (must not exceed 32 characters).
+     * Gets the Taxonomy key.
+     *
+     * @return string $taxonomy The Taxonomy key (must not exceed 32 characters).
      */
     public function getName();
 
     /**
-     * @return mixed[]
+     * Gets the Taxonomy options.
+     *
+     * @return mixed[] The options.
      */
     public function getOptions();
 
     /**
+     * Registers the Taxonomy.
+     *
      * @return null|\WP_Error WP_Error if errors, otherwise null.
      */
     public function register();
 
     /**
-     * @return bool
+     * Unregisters the Taxonomy.
+     *
+     * @return bool True on success, false on failure.
      */
     public function unregister();
 }
