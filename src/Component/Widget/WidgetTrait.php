@@ -29,7 +29,7 @@ trait WidgetTrait
     /**
      * {@inheritDoc}
      */
-    function __get($name)
+    public function __get($name)
     {
         switch ($name) {
             case 'idBase':
@@ -72,7 +72,7 @@ trait WidgetTrait
     /**
      * {@inheritDoc}
      */
-    function __set($name, $value)
+    public function __set($name, $value)
     {
         switch ($name) {
             case 'idBase':
