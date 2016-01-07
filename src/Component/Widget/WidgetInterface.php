@@ -22,7 +22,7 @@ interface WidgetInterface
     /**
      * Outputs Widget.
      *
-     * @param mixed[] $args The Widget arguments.
+     * @param mixed[] $args The Widget arguments for output.
      * @param mixed[] $instance The instance-specific Widget settings.
      */
     public function widget($args, $instance);
