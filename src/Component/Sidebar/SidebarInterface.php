@@ -35,8 +35,6 @@ interface SidebarInterface
 
     /**
      * Registers the Sidebar.
-     *
-     * @return string The Sidebar ID.
      */
     public function register();
 

@@ -53,7 +53,7 @@ trait SidebarTrait
     {
         $args = array_merge($this->getOptions(), ['id' => $this->getId()]);
 
-        return register_sidebar($args);
+        register_sidebar($args);
     }
 
     /**
