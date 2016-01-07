@@ -16,8 +16,8 @@ namespace Devaloka\Component\Widget;
  * @package Devaloka\Component\Widget
  *
  * @property string $idBase
- * @property array $widgetOptions
- * @property array $controlOptions
+ * @property mixed[] $widgetOptions
+ * @property mixed[] $controlOptions
  * @property bool $isUpdated
  * @property string $optionName
  * @property string $altOptionName
