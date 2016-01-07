@@ -31,6 +31,16 @@ trait PostTypeTrait
     protected $taxonomies = [];
 
     /**
+     * Gets the Post Type options.
+     *
+     * @return mixed[] The options.
+     */
+    public function getOptions()
+    {
+        return [];
+    }
+
+    /**
      * Adds a Taxonomy to the Post Type.
      *
      * @param TaxonomyInterface $taxonomy An instance of TaxonomyInterface.
