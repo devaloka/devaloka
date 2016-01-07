@@ -34,6 +34,18 @@ interface SidebarInterface
     public function getOptions();
 
     /**
+     * Renders the Sidebar with the given options.
+     *
+     * @return string The rendered HTML.
+     */
+    public function render();
+
+    /**
+     * Displays the Sidebar with the given options.
+     */
+    public function display();
+
+    /**
      * Registers the Sidebar.
      */
     public function register();

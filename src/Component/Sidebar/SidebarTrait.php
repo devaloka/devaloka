@@ -39,6 +39,40 @@ trait SidebarTrait
     }
 
     /**
+     * Renders the Sidebar with the given options.
+     *
+     * @return string The rendered HTML.
+     */
+    public function render()
+    {
+        $sidebarId = $this->getId();
+
+        if (!is_active_sidebar($sidebarId)) {
+            return '';
+        }
+
+        ob_start();
+
+        dynamic_sidebar($sidebarId);
+
+        return ob_get_clean();
+    }
+
+    /**
+     * Displays the Sidebar with the given options.
+     */
+    public function display()
+    {
+        $sidebarId = $this->getId();
+
+        if (!is_active_sidebar($sidebarId)) {
+            return;
+        }
+
+        dynamic_sidebar($sidebarId);
+    }
+
+    /**
      * Registers the Sidebar.
      *
      * @return string The Sidebar ID.
