@@ -79,8 +79,8 @@ trait PostTypeTrait
         $options    = $this->getOptions();
         $taxonomies = [];
 
-        foreach ($this->getTaxonomies() as $taxonomy) {
-            $taxonomies[] = $taxonomy->getName();
+        foreach ($this->getTaxonomies() as $name => $taxonomy) {
+            $taxonomies[] = $name;
         }
 
         $options['taxonomies'] = $taxonomies;
