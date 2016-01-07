@@ -14,6 +14,7 @@ namespace Devaloka\Component\PostType;
 
 use Devaloka\Component\Taxonomy\TaxonomyInterface;
 use LogicException;
+use RuntimeException;
 
 /**
  * Trait PostTypeTrait
@@ -39,7 +40,9 @@ trait PostTypeTrait
     /**
      * Registers the Post Type.
      *
-     * @return Object|\WP_Error The registered post type object, or an error object.
+     * @return PostTypeInterface The registered PostTypeInterface.
+     *
+     * @throws RuntimeException If the Post Type cannot be registered.
      */
     public function register()
     {
@@ -54,7 +57,11 @@ trait PostTypeTrait
 
         $options['taxonomies'] = $taxonomies;
 
-        return register_post_type($this->getName(), $options);
+        if (is_wp_error(register_post_type($this->getName(), $options))) {
+            throw new RuntimeException('Cannot register the Post Type.');
+        }
+
+        return $this;
     }
 
     /**
