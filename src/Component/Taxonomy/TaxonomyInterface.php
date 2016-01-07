@@ -10,6 +10,8 @@
 
 namespace Devaloka\Component\Taxonomy;
 
+use Devaloka\Component\PostType\PostTypeInterface;
+
 /**
  * Interface TaxonomyInterface
  *
@@ -32,6 +34,27 @@ interface TaxonomyInterface
      * @return mixed[] The options.
      */
     public function getOptions();
+
+    /**
+     * Adds an object type to the Taxonomy.
+     *
+     * @param PostTypeInterface|string $objectType The object type.
+     */
+    public function addObjectType($objectType);
+
+    /**
+     * Removes an object type from the Taxonomy.
+     *
+     * @param PostTypeInterface|string $objectType The object type.
+     */
+    public function removeObjectType($objectType);
+
+    /**
+     * Gets object types that have the relation with the Taxonomy.
+     *
+     * @return string[] The object types.
+     */
+    public function getObjectTypes();
 
     /**
      * Registers the Taxonomy.

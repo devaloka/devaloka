@@ -12,6 +12,7 @@
 
 namespace Devaloka\Component\Taxonomy;
 
+use Devaloka\Component\PostType\PostTypeInterface;
 use RuntimeException;
 
 /**
@@ -24,7 +25,7 @@ use RuntimeException;
 trait TaxonomyTrait
 {
     /**
-     * @var string[] The object types that belongs to the Taxonomy.
+     * @var string[] The object types that have the relation with the Taxonomy.
      */
     protected $objectTypes = [];
 
@@ -46,15 +47,67 @@ trait TaxonomyTrait
     }
 
     /**
+     * Adds an object type to the Taxonomy.
+     *
+     * @param PostTypeInterface|string $objectType The object type.
+     */
+    public function addObjectType($objectType)
+    {
+        /** @var string $objectTypeName */
+        $objectTypeName = ($objectType instanceof PostTypeInterface) ? $objectType->getName() : $objectType;
+
+        $taxonomyName = $this->getName();
+
+        if (taxonomy_exists($taxonomyName)) {
+            register_taxonomy_for_object_type($taxonomyName, $objectTypeName);
+        }
+
+        $this->objectTypes[$objectTypeName] = $objectTypeName;
+    }
+
+    /**
+     * Removes an object type from the Taxonomy.
+     *
+     * @param PostTypeInterface|string $objectType The object type.
+     */
+    public function removeObjectType($objectType)
+    {
+        /** @var string $objectTypeName */
+        $objectTypeName = ($objectType instanceof PostTypeInterface) ? $objectType->getName() : $objectType;
+
+        $taxonomyName = $this->getName();
+
+        if (taxonomy_exists($taxonomyName)) {
+            unregister_taxonomy_for_object_type($taxonomyName, $objectTypeName);
+        }
+
+        unset($this->objectTypes[$objectTypeName]);
+    }
+
+    /**
+     * Gets object types that have the relation with the Taxonomy.
+     *
+     * @return string[] The object types.
+     */
+    public function getObjectTypes()
+    {
+        $taxonomy    = get_taxonomy($this->getName());
+        $objectTypes = ($taxonomy !== false) ? $taxonomy->object_type : [];
+        $objectTypes = array_merge($objectTypes, array_keys($this->objectTypes));
+
+        return array_unique($objectTypes);
+    }
+
+    /**
      * Registers the Taxonomy.
      *
      * @throws RuntimeException If the Taxonomy cannot be registered.
      */
     public function register()
     {
-        /** @var TaxonomyInterface $this */
+        $objectTypes = array_keys($this->objectTypes);
 
-        if (is_wp_error(register_taxonomy($this->getName(), $this->objectTypes, $this->getOptions()))) {
+        if (is_wp_error(register_taxonomy($this->getName(), $objectTypes, $this->getOptions()))) {
             throw new RuntimeException('Cannot register the Taxonomy.');
         }
     }
@@ -70,8 +123,8 @@ trait TaxonomyTrait
             return;
         }
 
-        foreach ($this->objectTypes as $objectType) {
-            if (!unregister_taxonomy_for_object_type($this->getName(), $objectType)) {
+        foreach ($this->objectTypes as $objectTypeName => $value) {
+            if (!unregister_taxonomy_for_object_type($this->getName(), $objectTypeName)) {
                 throw new RuntimeException('Cannot unregister the Taxonomy.');
             }
         }
