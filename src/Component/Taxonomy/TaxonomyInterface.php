@@ -52,7 +52,7 @@ interface TaxonomyInterface
     /**
      * Gets object types that have the relation with the Taxonomy.
      *
-     * @return string[] The object types.
+     * @return PostTypeInterface|string[] The object types.
      */
     public function getObjectTypes();
 

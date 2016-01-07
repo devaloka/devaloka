@@ -87,15 +87,16 @@ trait TaxonomyTrait
     /**
      * Gets object types that have the relation with the Taxonomy.
      *
-     * @return string[] The object types.
+     * @return PostTypeInterface|string[] The object types.
      */
     public function getObjectTypes()
     {
         $taxonomy    = get_taxonomy($this->getName());
         $objectTypes = ($taxonomy !== false) ? $taxonomy->object_type : [];
-        $objectTypes = array_merge($objectTypes, array_keys($this->objectTypes));
+        $objectTypes = array_combine($objectTypes, $objectTypes);
+        $objectTypes = array_merge($objectTypes, $this->objectTypes);
 
-        return array_unique($objectTypes);
+        return $objectTypes;
     }
 
     /**
