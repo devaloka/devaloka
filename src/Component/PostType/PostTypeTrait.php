@@ -41,6 +41,16 @@ trait PostTypeTrait
     }
 
     /**
+     * Gets the Taxonomies that will be registered for the Post Type.
+     *
+     * @return TaxonomyInterface[] An array of TaxonomyInterface.
+     */
+    public function getTaxonomies()
+    {
+        return $this->taxonomies;
+    }
+
+    /**
      * Registers the Post Type.
      *
      * @throws RuntimeException If the Post Type cannot be registered.
