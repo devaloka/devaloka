@@ -25,6 +25,9 @@ use RuntimeException;
  */
 trait PostTypeTrait
 {
+    /**
+     * @var TaxonomyInterface[] The Taxonomies which the Post Type belongs to.
+     */
     protected $taxonomies = [];
 
     /**
