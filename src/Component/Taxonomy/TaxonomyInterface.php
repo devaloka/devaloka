@@ -43,7 +43,7 @@ interface TaxonomyInterface
     /**
      * Unregisters the Taxonomy.
      *
-     * @return bool True on success, false on failure.
+     * @throws \RuntimeException If the Taxonomy cannot be unregistered.
      */
     public function unregister();
 }

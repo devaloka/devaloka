@@ -55,7 +55,7 @@ trait TaxonomyTrait
     /**
      * Unregisters the Taxonomy.
      *
-     * @return bool True on success, false on failure.
+     * @throws \RuntimeException If the Taxonomy cannot be unregistered.
      */
     public function unregister()
     {
@@ -65,10 +65,8 @@ trait TaxonomyTrait
 
         foreach ($this->objectTypes as $objectType) {
             if (!unregister_taxonomy_for_object_type($this->getName(), $objectType)) {
-                return false;
+                throw new RuntimeException('Cannot unregister the Taxonomy.');
             }
         }
-
-        return true;
     }
 }
