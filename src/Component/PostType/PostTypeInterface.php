@@ -61,7 +61,7 @@ interface PostTypeInterface
     /**
      * Unregisters the Post Type.
      *
-     * @return bool|\WP_Error True on success, WP_Error on failure.
+     * @return bool True on success, false on failure.
      */
     public function unregister();
 }
