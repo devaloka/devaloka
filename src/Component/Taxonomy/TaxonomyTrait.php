@@ -29,6 +29,13 @@ trait TaxonomyTrait
     protected $objectTypes = [];
 
     /**
+     * Gets the Taxonomy key.
+     *
+     * @return string $taxonomy The Taxonomy key (must not exceed 32 characters).
+     */
+    abstract public function getName();
+
+    /**
      * Gets the Taxonomy options.
      *
      * @return mixed[] The options.
