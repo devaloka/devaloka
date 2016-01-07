@@ -222,7 +222,7 @@ trait WidgetTrait
     }
 
     /**
-     * Get the settings for all instances of the Widget class.
+     * Gets the settings for all instances of the Widget class.
      *
      * @see \WP_Widget::get_settings() :alias:
      *
