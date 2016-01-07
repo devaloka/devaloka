@@ -25,7 +25,7 @@ use RuntimeException;
 trait TaxonomyTrait
 {
     /**
-     * @var string[] The object types that have the relation with the Taxonomy.
+     * @var PostTypeInterface|string[] The object types that have the relation with the Taxonomy.
      */
     protected $objectTypes = [];
 
@@ -62,7 +62,7 @@ trait TaxonomyTrait
             register_taxonomy_for_object_type($taxonomyName, $objectTypeName);
         }
 
-        $this->objectTypes[$objectTypeName] = $objectTypeName;
+        $this->objectTypes[$objectTypeName] = $objectType;
     }
 
     /**
