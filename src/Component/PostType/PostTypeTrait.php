@@ -65,7 +65,9 @@ trait PostTypeTrait
     }
 
     /**
-     * @throws LogicException
+     * Unregisters the menu.
+     *
+     * @throws LogicException Always throw a LogicException because there are no functions to unregister NavMenu.
      *
      * @see https://core.trac.wordpress.org/ticket/14761 #14761 (unregister_post_type()) – WordPress Trac
      */
