@@ -12,6 +12,8 @@
 
 namespace Devaloka\Component\Taxonomy;
 
+use RuntimeException;
+
 /**
  * Trait TaxonomyTrait
  *
@@ -39,13 +41,15 @@ trait TaxonomyTrait
     /**
      * Registers the Taxonomy.
      *
-     * @return null|\WP_Error WP_Error if errors, otherwise null.
+     * @throws RuntimeException If the Taxonomy cannot be registered.
      */
     public function register()
     {
         /** @var TaxonomyInterface $this */
 
-        return register_taxonomy($this->getName(), $this->objectTypes, $this->getOptions());
+        if (is_wp_error(register_taxonomy($this->getName(), $this->objectTypes, $this->getOptions()))) {
+            throw new RuntimeException('Cannot register the Taxonomy.');
+        }
     }
 
     /**

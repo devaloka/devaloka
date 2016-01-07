@@ -36,7 +36,7 @@ interface TaxonomyInterface
     /**
      * Registers the Taxonomy.
      *
-     * @return null|\WP_Error WP_Error if errors, otherwise null.
+     * @throws \RuntimeException If the Taxonomy cannot be registered.
      */
     public function register();
 
