@@ -12,6 +12,8 @@
 
 namespace Devaloka\Component\NavMenu;
 
+use RuntimeException;
+
 /**
  * Class NavMenuTrait
  *
@@ -44,10 +46,12 @@ trait NavMenuTrait
     /**
      * Unregisters the menu.
      *
-     * @return bool True on success, false on failure.
+     * @throws RuntimeException If the menu cannot be unregistered.
      */
     public function unregister()
     {
-        return unregister_nav_menu($this->getLocation());
+        if (!unregister_nav_menu($this->getLocation())) {
+            throw new RuntimeException('Cannot unregister the NavMenu.');
+        }
     }
 }

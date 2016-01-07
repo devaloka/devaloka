@@ -41,7 +41,7 @@ interface NavMenuInterface
     /**
      * Unregisters the menu.
      *
-     * @return bool True on success, false on failure.
+     * @throws \RuntimeException If the menu cannot be unregistered.
      */
     public function unregister();
 }
