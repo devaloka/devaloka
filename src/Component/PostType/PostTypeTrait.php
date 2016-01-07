@@ -31,6 +31,13 @@ trait PostTypeTrait
     protected $taxonomies = [];
 
     /**
+     * Gets the Post Type name.
+     *
+     * @return string The Post Type name.
+     */
+    abstract public function getName();
+
+    /**
      * Gets the Post Type options.
      *
      * @return mixed[] The options.
