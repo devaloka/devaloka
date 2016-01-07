@@ -10,8 +10,6 @@
 
 namespace Devaloka\Component\PostType;
 
-use Devaloka\Component\Taxonomy\TaxonomyInterface;
-
 /**
  * Interface PostTypeInterface
  *
@@ -34,20 +32,6 @@ interface PostTypeInterface
      * @return mixed[] The options.
      */
     public function getOptions();
-
-    /**
-     * Adds a Taxonomy to the Post Type.
-     *
-     * @param TaxonomyInterface $taxonomy An instance of TaxonomyInterface.
-     */
-    public function addTaxonomy(TaxonomyInterface $taxonomy);
-
-    /**
-     * Gets the Taxonomies that will be registered for the Post Type.
-     *
-     * @return TaxonomyInterface[] An array of TaxonomyInterface.
-     */
-    public function getTaxonomies();
 
     /**
      * Registers the Post Type.

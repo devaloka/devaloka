@@ -12,7 +12,6 @@
 
 namespace Devaloka\Component\PostType;
 
-use Devaloka\Component\Taxonomy\TaxonomyInterface;
 use LogicException;
 use RuntimeException;
 
@@ -25,11 +24,6 @@ use RuntimeException;
  */
 trait PostTypeTrait
 {
-    /**
-     * @var TaxonomyInterface[] The Taxonomies which the Post Type belongs to.
-     */
-    protected $taxonomies = [];
-
     /**
      * Gets the Post Type name.
      *
@@ -48,44 +42,13 @@ trait PostTypeTrait
     }
 
     /**
-     * Adds a Taxonomy to the Post Type.
-     *
-     * @param TaxonomyInterface $taxonomy An instance of TaxonomyInterface.
-     */
-    public function addTaxonomy(TaxonomyInterface $taxonomy)
-    {
-        $this->taxonomies[$taxonomy->getName()] = $taxonomy;
-    }
-
-    /**
-     * Gets the Taxonomies that will be registered for the Post Type.
-     *
-     * @return TaxonomyInterface[] An array of TaxonomyInterface.
-     */
-    public function getTaxonomies()
-    {
-        return $this->taxonomies;
-    }
-
-    /**
      * Registers the Post Type.
      *
      * @throws RuntimeException If the Post Type cannot be registered.
      */
     public function register()
     {
-        /** @var PostTypeInterface $this */
-
-        $options    = $this->getOptions();
-        $taxonomies = [];
-
-        foreach ($this->getTaxonomies() as $name => $taxonomy) {
-            $taxonomies[] = $name;
-        }
-
-        $options['taxonomies'] = $taxonomies;
-
-        if (is_wp_error(register_post_type($this->getName(), $options))) {
+        if (is_wp_error(register_post_type($this->getName(), $this->getOptions()))) {
             throw new RuntimeException('Cannot register the Post Type.');
         }
     }
