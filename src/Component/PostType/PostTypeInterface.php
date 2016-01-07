@@ -52,8 +52,6 @@ interface PostTypeInterface
     /**
      * Registers the Post Type.
      *
-     * @return PostTypeInterface The registered PostTypeInterface.
-     *
      * @throws \RuntimeException If the Post Type cannot be registered.
      */
     public function register();

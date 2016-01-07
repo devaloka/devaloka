@@ -40,8 +40,6 @@ trait PostTypeTrait
     /**
      * Registers the Post Type.
      *
-     * @return PostTypeInterface The registered PostTypeInterface.
-     *
      * @throws RuntimeException If the Post Type cannot be registered.
      */
     public function register()
@@ -60,8 +58,6 @@ trait PostTypeTrait
         if (is_wp_error(register_post_type($this->getName(), $options))) {
             throw new RuntimeException('Cannot register the Post Type.');
         }
-
-        return $this;
     }
 
     /**
