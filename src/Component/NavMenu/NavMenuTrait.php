@@ -46,6 +46,34 @@ trait NavMenuTrait
     }
 
     /**
+     * Renders the menu with the given options.
+     *
+     * @param mixed[] $options The options.
+     *
+     * @return string The rendered HTML.
+     */
+    public function render(array $options = [])
+    {
+        $options         = array_merge($this->getDefaultOptions(), $options);
+        $options['echo'] = false;
+
+        return wp_nav_menu($options);
+    }
+
+    /**
+     * Displays the menu with the given options.
+     *
+     * @param mixed[] $options The options.
+     */
+    public function display(array $options = [])
+    {
+        $options         = array_merge($this->getDefaultOptions(), $options);
+        $options['echo'] = true;
+
+        wp_nav_menu($options);
+    }
+
+    /**
      * Registers the menu.
      */
     public function register()

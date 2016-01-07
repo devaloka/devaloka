@@ -41,6 +41,22 @@ interface NavMenuInterface
     public function getDefaultOptions();
 
     /**
+     * Renders the menu with the given options.
+     *
+     * @param mixed[] $options The options.
+     *
+     * @return string The rendered HTML.
+     */
+    public function render(array $options = []);
+
+    /**
+     * Displays the menu with the given options.
+     *
+     * @param mixed[] $options The options.
+     */
+    public function display(array $options = []);
+
+    /**
      * Registers the menu.
      */
     public function register();
