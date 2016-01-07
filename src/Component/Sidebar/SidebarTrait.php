@@ -21,6 +21,11 @@ namespace Devaloka\Component\Sidebar;
  */
 trait SidebarTrait
 {
+    /**
+     * Gets the Sidebar ID.
+     *
+     * @return string The Sidebar ID.
+     */
     public function getId()
     {
         $sidebars = array_key_exists('wp_registered_sidebars', $GLOBALS) ? $GLOBALS['wp_registered_sidebars'] : [];
@@ -29,11 +34,21 @@ trait SidebarTrait
         return 'sidebar-' . $nextId;
     }
 
+    /**
+     * Gets the Sidebar options.
+     *
+     * @return mixed[] The options.
+     */
     public function getOptions()
     {
         return [];
     }
 
+    /**
+     * Registers the Sidebar.
+     *
+     * @return string The Sidebar ID.
+     */
     public function register()
     {
         $args = array_merge($this->getOptions(), ['id' => $this->getId()]);
@@ -41,6 +56,9 @@ trait SidebarTrait
         return register_sidebar($args);
     }
 
+    /**
+     * Unregisters the Sidebar.
+     */
     public function unregister()
     {
         unregister_sidebar($this->getId());

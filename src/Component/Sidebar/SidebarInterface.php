@@ -20,19 +20,28 @@ namespace Devaloka\Component\Sidebar;
 interface SidebarInterface
 {
     /**
-     * @return string
+     * Gets the Sidebar ID.
+     *
+     * @return string The Sidebar ID.
      */
     public function getId();
 
     /**
-     * @return mixed[]
+     * Gets the Sidebar options.
+     *
+     * @return mixed[] The options.
      */
     public function getOptions();
 
     /**
+     * Registers the Sidebar.
+     *
      * @return string The Sidebar ID.
      */
     public function register();
 
+    /**
+     * Unregisters the Sidebar.
+     */
     public function unregister();
 }
