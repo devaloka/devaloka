@@ -20,18 +20,27 @@ namespace Devaloka\Component\NavMenu;
 interface NavMenuInterface
 {
     /**
-     * @return string The menu location identifier.
+     * Gets the menu location identifier.
+     *
+     * @return string The location identifier.
      */
     public function getLocation();
 
     /**
-     * @return string The menu location descriptive text.
+     * Gets the menu location descriptive text.
+     *
+     * @return string The location descriptive text.
      */
     public function getDescription();
 
+    /**
+     * Registers the menu.
+     */
     public function register();
 
     /**
+     * Unregisters the menu.
+     *
      * @return bool True on success, false on failure.
      */
     public function unregister();

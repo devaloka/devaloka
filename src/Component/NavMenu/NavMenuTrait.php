@@ -20,21 +20,30 @@ namespace Devaloka\Component\NavMenu;
 trait NavMenuTrait
 {
     /**
-     * @return string The menu location identifier.
+     * Gets the menu location identifier.
+     *
+     * @return string The location identifier.
      */
     abstract public function getLocation();
 
     /**
-     * @return string The menu location descriptive text.
+     * Gets the menu location descriptive text.
+     *
+     * @return string The location descriptive text.
      */
     abstract public function getDescription();
 
+    /**
+     * Registers the menu.
+     */
     public function register()
     {
         register_nav_menu($this->getLocation(), $this->getDescription());
     }
 
     /**
+     * Unregisters the menu.
+     *
      * @return bool True on success, false on failure.
      */
     public function unregister()
