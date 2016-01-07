@@ -26,13 +26,7 @@ trait SidebarTrait
      *
      * @return string The Sidebar ID.
      */
-    public function getId()
-    {
-        $sidebars = array_key_exists('wp_registered_sidebars', $GLOBALS) ? $GLOBALS['wp_registered_sidebars'] : [];
-        $nextId   = count($sidebars) + 1;
-
-        return 'sidebar-' . $nextId;
-    }
+    abstract public function getId();
 
     /**
      * Gets the Sidebar options.
