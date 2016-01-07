@@ -67,7 +67,7 @@ trait TaxonomyTrait
     public function unregister()
     {
         if (count($this->objectTypes) < 1) {
-            return false;
+            return;
         }
 
         foreach ($this->objectTypes as $objectType) {
