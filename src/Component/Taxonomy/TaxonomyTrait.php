@@ -10,7 +10,7 @@
  * @license GPL-3.0
  */
 
-namespace Devaloka\Taxonomy;
+namespace Devaloka\Component\Taxonomy;
 
 /**
  * Trait TaxonomyTrait

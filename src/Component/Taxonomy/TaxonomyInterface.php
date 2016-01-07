@@ -8,7 +8,7 @@
  * @license MIT
  */
 
-namespace Devaloka\Commponent\Taxonomy;
+namespace Devaloka\Component\Taxonomy;
 
 /**
  * Interface TaxonomyInterface
