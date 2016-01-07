@@ -22,32 +22,43 @@ use Devaloka\Component\Taxonomy\TaxonomyInterface;
 interface PostTypeInterface
 {
     /**
-     * @return string
+     * Gets the Post Type name.
+     *
+     * @return string The Post Type name.
      */
     public function getName();
 
     /**
-     * @return mixed[]
+     * Gets the Post Type options.
+     *
+     * @return mixed[] The options.
      */
     public function getOptions();
 
     /**
-     * @param TaxonomyInterface $taxonomy
+     * Adds a Taxonomy to the Post Type.
+     *
+     * @param TaxonomyInterface $taxonomy An instance of TaxonomyInterface.
      */
     public function addTaxonomy(TaxonomyInterface $taxonomy);
 
     /**
-     * @return \Devaloka\Component\Taxonomy\TaxonomyInterface[] An array of taxonomy ID(s) that will be registered for
-     *                                                          the Post Type.
+     * Gets the Taxonomies that will be registered for the Post Type.
+     *
+     * @return TaxonomyInterface[] An array of TaxonomyInterface.
      */
     public function getTaxonomies();
 
     /**
-     * @return object|\WP_Error The registered post type object, or an error object.
+     * Registers the Post Type.
+     *
+     * @return Object|\WP_Error The registered post type object, or an error object.
      */
     public function register();
 
     /**
+     * Unregisters the Post Type.
+     *
      * @return bool|\WP_Error True on success, WP_Error on failure.
      */
     public function unregister();

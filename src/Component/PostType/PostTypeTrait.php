@@ -26,11 +26,21 @@ trait PostTypeTrait
 {
     protected $taxonomies = [];
 
+    /**
+     * Adds a Taxonomy to the Post Type.
+     *
+     * @param TaxonomyInterface $taxonomy An instance of TaxonomyInterface.
+     */
     public function addTaxonomy(TaxonomyInterface $taxonomy)
     {
         $this->taxonomies[$taxonomy->getName()] = $taxonomy;
     }
 
+    /**
+     * Registers the Post Type.
+     *
+     * @return Object|\WP_Error The registered post type object, or an error object.
+     */
     public function register()
     {
         /** @var PostTypeInterface $this */
