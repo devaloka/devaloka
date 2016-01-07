@@ -48,6 +48,6 @@ trait NavMenuTrait
      */
     public function unregister()
     {
-        unregister_nav_menu($this->getLocation());
+        return unregister_nav_menu($this->getLocation());
     }
 }
