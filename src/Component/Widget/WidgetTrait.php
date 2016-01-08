@@ -117,6 +117,30 @@ trait WidgetTrait
     }
 
     /**
+     * Gets the Widget name.
+     *
+     * @return string The Widget name.
+     */
+    public function getName()
+    {
+        /** @var $this \WP_Widget */
+
+        return $this->name;
+    }
+
+    /**
+     * Gets the Widget options.
+     *
+     * @return mixed[] The options.
+     */
+    public function getOptions()
+    {
+        /** @var $this \WP_Widget */
+
+        return $this->widget_options;
+    }
+
+    /**
      * Renders a Widget.
      *
      * @param mixed[] $args The Widget arguments for output including `before_title`, `after_title`, `before_widget`,

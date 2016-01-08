@@ -20,6 +20,20 @@ namespace Devaloka\Component\Widget;
 interface WidgetInterface
 {
     /**
+     * Gets the Widget name.
+     *
+     * @return string The Widget name.
+     */
+    public function getName();
+
+    /**
+     * Gets the Widget options.
+     *
+     * @return mixed[] The options.
+     */
+    public function getOptions();
+
+    /**
      * Renders a Widget.
      *
      * @param mixed[] $args The Widget arguments for output including `before_title`, `after_title`, `before_widget`,
