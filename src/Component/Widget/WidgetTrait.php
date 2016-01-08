@@ -117,6 +117,50 @@ trait WidgetTrait
     }
 
     /**
+     * Renders a Widget.
+     *
+     * @param mixed[] $args The Widget arguments for output including `before_title`, `after_title`, `before_widget`,
+     *                      and `after_widget`.
+     * @param mixed[] $instance The instance-specific Widget settings.
+     *
+     * @return string The rendered HTML.
+     */
+    public function render(array $args, array $instance)
+    {
+        ob_start();
+
+        parent::widget($args, $instance);
+
+        return ob_get_clean();
+    }
+
+    /**
+     * Displays a Widget.
+     *
+     * @param mixed[] $args The Widget arguments for output including `before_title`, `after_title`, `before_widget`,
+     *                      and `after_widget`.
+     * @param mixed[] $instance The instance-specific Widget settings.
+     */
+    public function display(array $args, array $instance)
+    {
+        echo $this->render($args, $instance);
+    }
+
+    /**
+     * Displays a Widget.
+     *
+     * @see WidgetInterface::display :alias:
+     *
+     * @param mixed[] $args The Widget arguments for output including `before_title`, `after_title`, `before_widget`,
+     *                      and `after_widget`.
+     * @param mixed[] $instance The instance-specific Widget settings.
+     */
+    public function widget($args, $instance)
+    {
+        $this->display($args, $instance);
+    }
+
+    /**
      * Gets the `name` attribute value for a field.
      *
      * @see \WP_Widget::get_field_name() :alias:

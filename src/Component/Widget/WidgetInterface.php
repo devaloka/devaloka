@@ -20,10 +20,22 @@ namespace Devaloka\Component\Widget;
 interface WidgetInterface
 {
     /**
-     * Outputs Widget.
+     * Renders a Widget.
      *
-     * @param mixed[] $args The Widget arguments for output.
+     * @param mixed[] $args The Widget arguments for output including `before_title`, `after_title`, `before_widget`,
+     *                      and `after_widget`.
+     * @param mixed[] $instance The instance-specific Widget settings.
+     *
+     * @return string The rendered HTML.
+     */
+    public function render(array $args, array $instance);
+
+    /**
+     * Displays a Widget.
+     *
+     * @param mixed[] $args The Widget arguments for output including `before_title`, `after_title`, `before_widget`,
+     *                      and `after_widget`.
      * @param mixed[] $instance The instance-specific Widget settings.
      */
-    public function widget($args, $instance);
+    public function display(array $args, array $instance);
 }
