@@ -1,7 +1,7 @@
 {
     "name"             : "devaloka/devaloka",
     "description"      : "A WordPress plugin brings DI Container, Event Dispatcher to WordPress",
-    "version"          : "0.5.2",
+    "version"          : "0.5.3",
     "type"             : "devaloka-muplugin",
     "keywords"         : [
         "wordpress",

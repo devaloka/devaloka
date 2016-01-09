@@ -1,6 +1,6 @@
 {
     "name"           : "@devaloka/taxonomy",
-    "version"        : "0.5.2",
+    "version"        : "0.5.3",
     "description"    : "Interface, Trait and class(es) for WordPress Taxonomy",
     "keywords"       : [
         "wordpress",

@@ -1,6 +1,6 @@
 {
     "name"           : "@devaloka/nav-menu",
-    "version"        : "0.5.2",
+    "version"        : "0.5.3",
     "description"    : "Interface, Trait and class(es) for WordPress Post Type",
     "keywords"       : [
         "wordpress",

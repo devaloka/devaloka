@@ -2,7 +2,7 @@
 /*
 Plugin Name: Devaloka
 Description: A WordPress plugin brings DI Container, Event Dispatcher to WordPress
-Version: 0.5.2
+Version: 0.5.3
 Author: Whizark
 Author URI: http://whizark.com
 License: GPL-2.0+
