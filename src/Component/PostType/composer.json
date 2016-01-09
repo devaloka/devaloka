@@ -31,8 +31,7 @@
         "source": "https://github.com/devaloka/post-type"
     },
     "require"          : {
-        "php"              : ">=5.5.9",
-        "devaloka/taxonomy": "~0.5.2"
+        "php": ">=5.5.9"
     },
     "require-dev"      : {
         "squizlabs/php_codesniffer": "^2.5.0"
