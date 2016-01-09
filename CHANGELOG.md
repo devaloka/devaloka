@@ -1,3 +1,18 @@
+<a name="0.5.3"></a>
+## [0.5.3](https://github.com/devaloka/devaloka/compare/v0.5.2...v0.5.3) (2016-01-09)
+
+
+### Features
+
+* **NavMenu:** introduce NavMenu Interface/Trait ([38df778](https://github.com/devaloka/devaloka/commit/38df778)), closes [#11](https://github.com/devaloka/devaloka/issues/11)
+* **PostType:** introduce PostTypeInterface/Trait ([bce122f](https://github.com/devaloka/devaloka/commit/bce122f))
+* **Sidebar:** introduce SidebarInterface/Trait ([ade5215](https://github.com/devaloka/devaloka/commit/ade5215))
+* **Taxonomy:** introduce TaxonomyInterface/Trait ([c8b9144](https://github.com/devaloka/devaloka/commit/c8b9144))
+* **Widget:** introduce WidgetInterface/Trait ([f10dcbc](https://github.com/devaloka/devaloka/commit/f10dcbc))
+* **Widget:** introduce ControlAwareWidgetInterface/Trait ([30547cb](https://github.com/devaloka/devaloka/commit/30547cb))
+
+
+
 <a name="0.5.2"></a>
 ## [0.5.2](https://github.com/devaloka/devaloka/compare/v0.5.1...v0.5.2) (2015-12-29)
 
