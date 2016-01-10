@@ -63,13 +63,7 @@ trait SidebarTrait
      */
     public function display()
     {
-        $sidebarId = $this->getId();
-
-        if (!is_active_sidebar($sidebarId)) {
-            return;
-        }
-
-        dynamic_sidebar($sidebarId);
+        echo $this->render();
     }
 
     /**
