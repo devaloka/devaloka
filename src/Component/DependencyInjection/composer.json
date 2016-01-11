@@ -59,5 +59,10 @@
             "phpcs.xml",
             ".travis.yml"
         ]
+    },
+    "extra"            : {
+        "branch-alias": {
+            "dev-master": "0.7.x-dev"
+        }
     }
 }

@@ -92,6 +92,9 @@
         ]
     },
     "extra"            : {
+        "branch-alias"    : {
+            "dev-master": "0.7.x-dev"
+        },
         "installer-loader": "loader/00-devaloka-loader.php"
     }
 }
