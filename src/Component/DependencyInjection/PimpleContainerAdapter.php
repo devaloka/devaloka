@@ -8,14 +8,14 @@
  * @license MIT
  */
 
-namespace Devaloka\DependencyInjection;
+namespace Devaloka\Component\DependencyInjection;
 
 use Pimple\Container;
 
 /**
  * Class PimpleContainerAdapter
  *
- * @package Devaloka\DependencyInjection
+ * @package Devaloka\Component\DependencyInjection
  *
  * @codeCoverageIgnore
  */

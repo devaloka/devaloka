@@ -10,9 +10,9 @@
 
 namespace Devaloka;
 
-use Devaloka\DependencyInjection\ContainerInterface;
-use Devaloka\DependencyInjection\ContainerAwareTrait;
-use Devaloka\DependencyInjection\ContainerAwareInterface;
+use Devaloka\Component\DependencyInjection\ContainerInterface;
+use Devaloka\Component\DependencyInjection\ContainerAwareTrait;
+use Devaloka\Component\DependencyInjection\ContainerAwareInterface;
 use Devaloka\Provider\ServiceProviderInterface;
 use Devaloka\Provider\BootableProviderInterface;
 use Devaloka\Provider\EventListenerProviderInterface;

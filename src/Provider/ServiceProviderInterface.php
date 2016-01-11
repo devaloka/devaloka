@@ -11,7 +11,7 @@
 namespace Devaloka\Provider;
 
 use Devaloka\Devaloka;
-use Devaloka\DependencyInjection\ContainerInterface;
+use Devaloka\Component\DependencyInjection\ContainerInterface;
 
 /**
  * Interface ServiceProviderInterface

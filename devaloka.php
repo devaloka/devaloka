@@ -18,7 +18,7 @@ if (!defined('ABSPATH')) {
 
 use Pimple\Container;
 use Devaloka\Devaloka;
-use Devaloka\DependencyInjection\PimpleContainerAdapter;
+use Devaloka\Component\DependencyInjection\PimpleContainerAdapter;
 use Devaloka\Provider\DevalokaProvider;
 use Devaloka\EventDispatcher\Provider\EventDispatcherProvider;
 

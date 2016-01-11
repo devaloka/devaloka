@@ -27,7 +27,7 @@ if (!function_exists('devaloka')) {
 
 if (!function_exists('devaloka_container')) {
     /**
-     * @return \Devaloka\DependencyInjection\ContainerInterface|NullObject
+     * @return \Devaloka\Component\DependencyInjection\ContainerInterface|NullObject
      */
     function devaloka_container()
     {
@@ -65,7 +65,7 @@ if (!function_exists('deva_container')) {
     /**
      * @see devaloka_container() :alias:
      *
-     * @return \Devaloka\DependencyInjection\ContainerInterface|NullObject
+     * @return \Devaloka\Component\DependencyInjection\ContainerInterface|NullObject
      */
     function deva_container()
     {
@@ -103,7 +103,7 @@ if (!function_exists('dl_container')) {
     /**
      * @see devaloka_container() :alias:
      *
-     * @return \Devaloka\DependencyInjection\ContainerInterface|NullObject
+     * @return \Devaloka\Component\DependencyInjection\ContainerInterface|NullObject
      */
     function dl_container()
     {

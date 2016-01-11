@@ -8,12 +8,12 @@
  * @license MIT
  */
 
-namespace Devaloka\DependencyInjection;
+namespace Devaloka\Component\DependencyInjection;
 
 /**
  * Trait ContainerAwareTrait
  *
- * @package Devaloka\DependencyInjection
+ * @package Devaloka\Component\DependencyInjection
  *
  * @codeCoverageIgnore
  */

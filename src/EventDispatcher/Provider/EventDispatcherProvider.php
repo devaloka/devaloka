@@ -12,7 +12,7 @@ namespace Devaloka\EventDispatcher\Provider;
 
 use Pimple\Container;
 use Devaloka\Devaloka;
-use Devaloka\DependencyInjection\ContainerInterface;
+use Devaloka\Component\DependencyInjection\ContainerInterface;
 use Devaloka\Provider\ServiceProviderInterface;
 
 /**

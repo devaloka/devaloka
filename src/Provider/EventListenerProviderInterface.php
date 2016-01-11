@@ -12,7 +12,7 @@ namespace Devaloka\Provider;
 
 use Symfony\Component\EventDispatcher\EventDispatcherInterface;
 use Devaloka\Devaloka;
-use Devaloka\DependencyInjection\ContainerInterface;
+use Devaloka\Component\DependencyInjection\ContainerInterface;
 
 /**
  * Interface EventListenerProviderInterface

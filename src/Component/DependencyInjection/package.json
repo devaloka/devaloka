@@ -1,0 +1,40 @@
+{
+    "name"           : "@devaloka/dependency-injection",
+    "version"        : "0.5.3",
+    "description"    : "Devaloka DependencyInjection Component for WordPress",
+    "keywords"       : [
+        "wordpress",
+        "dependency injection",
+        "di",
+        "pimple"
+    ],
+    "homepage"       : "https://github.com/devaloka/dependency-injection",
+    "bugs"           : {
+        "url": "https://github.com/devaloka/devaloka/issues"
+    },
+    "license"        : "(MIT OR GPL-2.0 OR GPL-3.0)",
+    "author"         : {
+        "name" : "Whizark",
+        "email": "devaloka@whizark.com",
+        "url"  : "http://whizark.com"
+    },
+    "files"          : [
+        "./LICENSE",
+        "./ContainerAwareInterface.php",
+        "./ContainerAwareTrait.php",
+        "./ContainerInterface.php",
+        "./PimpleContainerAdapter.php"
+    ],
+    "repository"     : {
+        "type": "git",
+        "url" : "https://github.com/devaloka/dependency-injection.git"
+    },
+    "scripts"        : {
+        "lint"       : "remark -u remark-lint README.md",
+        "lint-travis": "remark -f -u remark-lint README.md"
+    },
+    "devDependencies": {
+        "remark"     : "^3.2.0",
+        "remark-lint": "^2.0.0"
+    }
+}

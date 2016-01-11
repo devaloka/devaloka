@@ -1,7 +1,7 @@
 <?php
 namespace Tests\Devaloka;
 
-use Devaloka\DependencyInjection\ContainerInterface;
+use Devaloka\Component\DependencyInjection\ContainerInterface;
 use Devaloka\Devaloka;
 use Devaloka\Provider\BootableProviderInterface;
 use Devaloka\Provider\EventListenerProviderInterface;
@@ -117,7 +117,7 @@ class DevalokaTest extends PHPUnit_Framework_TestCase
      */
     protected function createContainer()
     {
-        return Mockery::mock('Devaloka\DependencyInjection\ContainerInterface');
+        return Mockery::mock('Devaloka\Component\DependencyInjection\ContainerInterface');
     }
 
     /**
