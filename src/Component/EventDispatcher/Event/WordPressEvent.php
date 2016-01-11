@@ -8,7 +8,7 @@
  * @license MIT
  */
 
-namespace Devaloka\EventDispatcher\Event;
+namespace Devaloka\Component\EventDispatcher\Event;
 
 use OutOfRangeException;
 use Symfony\Component\EventDispatcher\Event;
@@ -16,7 +16,7 @@ use Symfony\Component\EventDispatcher\Event;
 /**
  * Class WordPressEvent
  *
- * @package Devaloka\EventDispatcher\Event
+ * @package Devaloka\Component\EventDispatcher\Event
  */
 class WordPressEvent extends Event
 {

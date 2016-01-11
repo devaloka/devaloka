@@ -1,7 +1,7 @@
 <?php
 namespace Tests\Devaloka\Common;
 
-use Devaloka\EventDispatcher\Event\WordPressEvent;
+use Devaloka\Component\EventDispatcher\Event\WordPressEvent;
 use PHPUnit_Framework_TestCase;
 
 /**

@@ -8,7 +8,7 @@
  * @license MIT
  */
 
-namespace Devaloka\EventDispatcher\Provider;
+namespace Devaloka\Component\EventDispatcher\Provider;
 
 use Pimple\Container;
 use Devaloka\Devaloka;
@@ -18,13 +18,13 @@ use Devaloka\Provider\ServiceProviderInterface;
 /**
  * Class EventDispatcherProvider
  *
- * @package Devaloka\EventDispatcher\Provider
+ * @package Devaloka\Component\EventDispatcher\Provider
  */
 class EventDispatcherProvider implements ServiceProviderInterface
 {
     public function register(Devaloka $devaloka, ContainerInterface $container)
     {
-        $container->add('event_dispatcher.class', 'Devaloka\\EventDispatcher\\EventDispatcher');
+        $container->add('event_dispatcher.class', 'Devaloka\\Component\\EventDispatcher\\EventDispatcher');
         $container->add(
             'event_dispatcher',
             function (Container $container) {

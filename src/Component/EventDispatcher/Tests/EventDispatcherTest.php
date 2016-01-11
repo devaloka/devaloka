@@ -1,8 +1,8 @@
 <?php
-namespace Tests\Devaloka\EventDispatcher;
+namespace Tests\Devaloka\Component\EventDispatcher;
 
 use Brain\Monkey;
-use Devaloka\EventDispatcher\EventDispatcher;
+use Devaloka\Component\EventDispatcher\EventDispatcher;
 use Mockery;
 use PHPUnit_Framework_TestCase;
 use Symfony\Component\EventDispatcher\EventSubscriberInterface;
@@ -10,7 +10,7 @@ use Symfony\Component\EventDispatcher\EventSubscriberInterface;
 /**
  * Class EventDispatcherTest
  *
- * @package Tests\Devaloka\EventDispatcher
+ * @package Tests\Devaloka\Component\EventDispatcher
  * @author Whizark <devaloka@whizark.com>
  */
 class EventDispatcherTest extends PHPUnit_Framework_TestCase
@@ -50,7 +50,7 @@ class EventDispatcherTest extends PHPUnit_Framework_TestCase
         $this->assertInstanceOf('Symfony\Component\EventDispatcher\Event', $result);
 
         // With Event object.
-        $actionEvent = Mockery::mock('Devaloka\EventDispatcher\Event\WordPressEvent');
+        $actionEvent = Mockery::mock('Devaloka\Component\EventDispatcher\Event\WordPressEvent');
 
         $actionEvent->shouldReceive('hasParameter')->with(0)->andReturn(false)->once();
         $actionEvent->shouldReceive('setReturnValue')->never();
@@ -74,7 +74,7 @@ class EventDispatcherTest extends PHPUnit_Framework_TestCase
         $this->assertInstanceOf('Symfony\Component\EventDispatcher\Event', $result);
 
         // With Event object.
-        $filterEvent = Mockery::mock('Devaloka\EventDispatcher\Event\WordPressEvent');
+        $filterEvent = Mockery::mock('Devaloka\Component\EventDispatcher\Event\WordPressEvent');
 
         $filterEvent->shouldReceive('hasParameter')->with(0)->andReturn(true)->once();
         $filterEvent->shouldReceive('getParameter')->with(0)->andReturn('filtered value')->once();

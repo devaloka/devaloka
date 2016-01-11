@@ -10,17 +10,17 @@
  * @license GPL-3.0
  */
 
-namespace Devaloka\EventDispatcher;
+namespace Devaloka\Component\EventDispatcher;
 
 use Symfony\Component\EventDispatcher\Event;
 use Symfony\Component\EventDispatcher\EventDispatcherInterface;
 use Symfony\Component\EventDispatcher\EventSubscriberInterface;
-use Devaloka\EventDispatcher\Event\WordPressEvent;
+use Devaloka\Component\EventDispatcher\Event\WordPressEvent;
 
 /**
  * Class EventDispatcher
  *
- * @package Devaloka\EventDispatcher
+ * @package Devaloka\Component\EventDispatcher
  */
 class EventDispatcher implements EventDispatcherInterface
 {

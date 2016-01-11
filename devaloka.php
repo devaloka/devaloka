@@ -20,7 +20,7 @@ use Pimple\Container;
 use Devaloka\Devaloka;
 use Devaloka\Component\DependencyInjection\PimpleContainerAdapter;
 use Devaloka\Provider\DevalokaProvider;
-use Devaloka\EventDispatcher\Provider\EventDispatcherProvider;
+use Devaloka\Component\EventDispatcher\Provider\EventDispatcherProvider;
 
 call_user_func(
     function () {

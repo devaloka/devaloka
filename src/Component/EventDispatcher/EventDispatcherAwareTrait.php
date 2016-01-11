@@ -8,14 +8,14 @@
  * @license MIT
  */
 
-namespace Devaloka\EventDispatcher;
+namespace Devaloka\Component\EventDispatcher;
 
 use Symfony\Component\EventDispatcher\EventDispatcherInterface;
 
 /**
  * Trait EventDispatcherAwareTrait
  *
- * @package Devaloka\EventDispatcher
+ * @package Devaloka\Component\EventDispatcher
  *
  * @codeCoverageIgnore
  */
