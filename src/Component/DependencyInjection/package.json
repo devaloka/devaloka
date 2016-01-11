@@ -12,7 +12,7 @@
     "bugs"           : {
         "url": "https://github.com/devaloka/devaloka/issues"
     },
-    "license"        : "(MIT OR GPL-2.0 OR GPL-3.0)",
+    "license"        : "MIT",
     "author"         : {
         "name" : "Whizark",
         "email": "devaloka@whizark.com",

@@ -10,9 +10,7 @@
     ],
     "homepage"         : "https://github.com/devaloka/dependency-injection",
     "license"          : [
-        "MIT",
-        "GPL-2.0",
-        "GPL-3.0"
+        "MIT"
     ],
     "minimum-stability": "stable",
     "authors"          : [
