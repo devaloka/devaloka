@@ -1,4 +1,4 @@
-# NavMenu Component [![Build Status](https://travis-ci.org/devaloka/nav-menu.svg?branch=master)](https://travis-ci.org/devaloka/nav-menu) [![Packagist](https://img.shields.io/packagist/v/devaloka/nav-menu.svg)](https://packagist.org/packages/devaloka/nav-menu)
+# NavMenu Component [![Build Status][travis-image]][travis-url] [![Packagist][packagist-image]][packagist-url]
 
 Interface, Trait and class(es) for WordPress NavMenu.
 
@@ -9,3 +9,9 @@ Interface, Trait and class(es) for WordPress NavMenu.
     ```sh
     composer require devaloka/nav-menu
     ```
+
+[travis-image]: https://travis-ci.org/devaloka/nav-menu.svg?branch=master
+[travis-url]: https://travis-ci.org/devaloka/nav-menu
+
+[packagist-image]: https://img.shields.io/packagist/v/devaloka/nav-menu.svg
+[packagist-url]: https://packagist.org/packages/devaloka/nav-menu
