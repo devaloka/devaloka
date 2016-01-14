@@ -8,7 +8,7 @@
  * @license MIT
  */
 
-use Devaloka\Common\NullObject;
+use Ecailles\NullObject\NullObject;
 
 if (!function_exists('devaloka')) {
     /**
