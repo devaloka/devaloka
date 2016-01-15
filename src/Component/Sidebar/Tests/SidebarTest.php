@@ -37,11 +37,11 @@ class SidebarTest extends PHPUnit_Framework_TestCase
 
         Monkey::functions()->expect('is_active_sidebar')
             ->with('test-sidebar')
-            ->andReturn(true)
-            ->once();
+            ->andReturn(true);
 
         Monkey::functions()->expect('dynamic_sidebar')
-            ->with('test-sidebar');
+            ->with('test-sidebar')
+            ->once();
 
         $html = $sidebar->render();
     }
@@ -70,11 +70,11 @@ class SidebarTest extends PHPUnit_Framework_TestCase
 
         Monkey::functions()->expect('is_active_sidebar')
             ->with('test-sidebar')
-            ->andReturn(true)
-            ->once();
+            ->andReturn(true);
 
         Monkey::functions()->expect('dynamic_sidebar')
-            ->with('test-sidebar');
+            ->with('test-sidebar')
+            ->once();
 
         $sidebar->display();
     }
