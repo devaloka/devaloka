@@ -16,8 +16,6 @@ namespace Devaloka\Component\Sidebar;
  * Trait SidebarTrait
  *
  * @package Devaloka\Component\Sidebar
- *
- * @codeCoverageIgnore
  */
 trait SidebarTrait
 {
