@@ -22,7 +22,6 @@
     <filter>
         <whitelist>
             <directory suffix=".php">./src/</directory>
-            <file>./devaloka.php</file>
             <exclude>
                 <directory>./src/Component/**/Tests/</directory>
             </exclude>
