@@ -4,6 +4,7 @@
 [![Latest Unstable Version][unstable-image]][unstable-url]
 [![License][license-image]][license-url]
 [![Build Status][travis-image]][travis-url]
+[![Coverage Status][coveralls-image]][coveralls-url]
 
 Devaloka EventDispatcher Component for WordPress.
 
@@ -26,3 +27,6 @@ Devaloka EventDispatcher Component for WordPress.
 
 [travis-image]: https://travis-ci.org/devaloka/event-dispatcher.svg?branch=master
 [travis-url]: https://travis-ci.org/devaloka/event-dispatcher
+
+[coveralls-image]: https://coveralls.io/repos/devaloka/event-dispatcher/badge.svg?branch=master&service=github
+[coveralls-url]: https://coveralls.io/github/devaloka/event-dispatcher?branch=master

@@ -4,6 +4,7 @@
 [![Latest Unstable Version][unstable-image]][unstable-url]
 [![License][license-image]][license-url]
 [![Build Status][travis-image]][travis-url]
+[![Coverage Status][coveralls-image]][coveralls-url]
 
 A WordPress plugin that brings DI Container, Event Dispatcher to WordPress.
 
@@ -65,3 +66,6 @@ A WordPress plugin that brings DI Container, Event Dispatcher to WordPress.
 
 [travis-image]: https://travis-ci.org/devaloka/devaloka.svg?branch=master
 [travis-url]: https://travis-ci.org/devaloka/devaloka
+
+[coveralls-image]: https://coveralls.io/repos/devaloka/devaloka/badge.svg?branch=master&service=github
+[coveralls-url]: https://coveralls.io/github/devaloka/devaloka?branch=master
