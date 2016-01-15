@@ -19,8 +19,6 @@ use RuntimeException;
  * Trait PostTypeTrait
  *
  * @package Devaloka\Component\PostType
- *
- * @codeCoverageIgnore
  */
 trait PostTypeTrait
 {
