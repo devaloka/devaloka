@@ -1,34 +1,5 @@
 {
-    "name"           : "@devaloka/event-dispatcher",
     "version"        : "0.5.3",
-    "description"    : "Devaloka DependencyInjection Component for WordPress",
-    "keywords"       : [
-        "wordpress",
-        "event",
-        "event dispatcher",
-        "hook",
-        "action",
-        "filter"
-    ],
-    "homepage"       : "https://github.com/devaloka/event-dispatcher",
-    "bugs"           : {
-        "url": "https://github.com/devaloka/devaloka/issues"
-    },
-    "license"        : "(MIT OR GPL-2.0 OR GPL-3.0)",
-    "author"         : {
-        "name" : "Whizark",
-        "email": "devaloka@whizark.com",
-        "url"  : "http://whizark.com"
-    },
-    "files"          : [
-        "./MIT-LICENSE.txt",
-        "./GPL-LICENSE.txt",
-        "./EventDispatcher.php",
-        "./EventDispatcherAwareInterface.php",
-        "./EventDispatcherAwareTrait.php",
-        "./Event/*",
-        "./Provider/*"
-    ],
     "repository"     : {
         "type": "git",
         "url" : "https://github.com/devaloka/event-dispatcher.git"
@@ -40,5 +11,6 @@
     "devDependencies": {
         "remark"     : "^3.2.0",
         "remark-lint": "^2.0.0"
-    }
+    },
+    "private"        : true
 }

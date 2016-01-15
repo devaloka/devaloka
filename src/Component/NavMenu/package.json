@@ -1,28 +1,5 @@
 {
-    "name"           : "@devaloka/nav-menu",
     "version"        : "0.5.3",
-    "description"    : "Interface, Trait and class(es) for WordPress Post Type",
-    "keywords"       : [
-        "wordpress",
-        "nav-menu",
-        "widget"
-    ],
-    "homepage"       : "https://github.com/devaloka/nav-menu",
-    "bugs"           : {
-        "url": "https://github.com/devaloka/devaloka/issues"
-    },
-    "license"        : "(MIT OR GPL-2.0 OR GPL-3.0)",
-    "author"         : {
-        "name" : "Whizark",
-        "email": "devaloka@whizark.com",
-        "url"  : "http://whizark.com"
-    },
-    "files"          : [
-        "./MIT-LICENSE.txt",
-        "./GPL-LICENSE.txt",
-        "./NavMenuInterface.php",
-        "./NavMenuTrait.php"
-    ],
     "repository"     : {
         "type": "git",
         "url" : "https://github.com/devaloka/nav-menu.git"
@@ -34,5 +11,6 @@
     "devDependencies": {
         "remark"     : "^3.2.0",
         "remark-lint": "^2.0.0"
-    }
+    },
+    "private"        : true
 }

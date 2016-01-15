@@ -1,35 +1,5 @@
 {
-    "name"           : "devaloka",
     "version"        : "0.5.3",
-    "description"    : "A WordPress plugin brings DI Container, Event Dispatcher to WordPress",
-    "keywords"       : [
-        "wordpress",
-        "plugin",
-        "pimple",
-        "event-dispatcher",
-        "di",
-        "event"
-    ],
-    "homepage"       : "https://github.com/devaloka/devaloka",
-    "bugs"           : {
-        "url": "https://github.com/devaloka/devaloka/issues"
-    },
-    "license"        : "(MIT OR GPL-2.0 OR GPL-3.0)",
-    "author"         : {
-        "name" : "Whizark",
-        "email": "devaloka@whizark.com",
-        "url"  : "http://whizark.com"
-    },
-    "files"          : [
-        "./MIT-LICENSE.txt",
-        "./GPL-LICENSE.txt",
-        "./devaloka.php",
-        "./loader/*",
-        "./src/*",
-        "./includes/*",
-        "./languages/*"
-    ],
-    "main"           : "./devaloka.php",
     "repository"     : {
         "type": "git",
         "url" : "https://github.com/devaloka/devaloka.git"
@@ -45,5 +15,6 @@
         "remark"      : "^3.2.0",
         "remark-lint" : "^2.1.0",
         "semver"      : "^5.1.0"
-    }
+    },
+    "private"        : true
 }
