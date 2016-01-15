@@ -1,4 +1,9 @@
-# Sidebar Component [![Build Status][travis-image]][travis-url] [![Packagist][packagist-image]][packagist-url]
+# Sidebar Component
+
+[![Latest Stable Version][stable-image]][stable-url]
+[![Latest Unstable Version][unstable-image]][unstable-url]
+[![License][license-image]][license-url]
+[![Build Status][travis-image]][travis-url]
 
 Interface, Trait and class(es) for WordPress Sidebar.
 
@@ -10,8 +15,14 @@ Interface, Trait and class(es) for WordPress Sidebar.
     composer require devaloka/sidebar
     ```
 
+[stable-image]: https://poser.pugx.org/devaloka/sidebar/v/stable
+[stable-url]: https://packagist.org/packages/devaloka/sidebar
+
+[unstable-image]: https://poser.pugx.org/devaloka/sidebar/v/unstable
+[unstable-url]: https://packagist.org/packages/devaloka/sidebar
+
+[license-image]: https://poser.pugx.org/devaloka/sidebar/license
+[license-url]: https://packagist.org/packages/devaloka/sidebar
+
 [travis-image]: https://travis-ci.org/devaloka/sidebar.svg?branch=master
 [travis-url]: https://travis-ci.org/devaloka/sidebar
-
-[packagist-image]: https://img.shields.io/packagist/v/devaloka/sidebar.svg
-[packagist-url]: https://packagist.org/packages/devaloka/sidebar

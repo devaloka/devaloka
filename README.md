@@ -1,4 +1,9 @@
-# Devaloka [![Build Status][travis-image]][travis-url] [![Packagist][packagist-image]][packagist-url]
+# Devaloka
+
+[![Latest Stable Version][stable-image]][stable-url]
+[![Latest Unstable Version][unstable-image]][unstable-url]
+[![License][license-image]][license-url]
+[![Build Status][travis-image]][travis-url]
 
 A WordPress plugin that brings DI Container, Event Dispatcher to WordPress.
 
@@ -49,8 +54,14 @@ A WordPress plugin that brings DI Container, Event Dispatcher to WordPress.
 
 *   [Query Exporter](https://github.com/devaloka/devaloka-query-exporter)
 
+[stable-image]: https://poser.pugx.org/devaloka/devaloka/v/stable
+[stable-url]: https://packagist.org/packages/devaloka/devaloka
+
+[unstable-image]: https://poser.pugx.org/devaloka/devaloka/v/unstable
+[unstable-url]: https://packagist.org/packages/devaloka/devaloka
+
+[license-image]: https://poser.pugx.org/devaloka/devaloka/license
+[license-url]: https://packagist.org/packages/devaloka/devaloka
+
 [travis-image]: https://travis-ci.org/devaloka/devaloka.svg?branch=master
 [travis-url]: https://travis-ci.org/devaloka/devaloka
-
-[packagist-image]: https://img.shields.io/packagist/v/devaloka/devaloka.svg
-[packagist-url]: https://packagist.org/packages/devaloka/devaloka

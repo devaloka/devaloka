@@ -1,4 +1,9 @@
-# PostType Component [![Build Status][travis-image]][travis-url] [![Packagist][packagist-image]][packagist-url]
+# PostType Component
+
+[![Latest Stable Version][stable-image]][stable-url]
+[![Latest Unstable Version][unstable-image]][unstable-url]
+[![License][license-image]][license-url]
+[![Build Status][travis-image]][travis-url]
 
 Interface, Trait and class(es) for WordPress Post Type.
 
@@ -10,8 +15,14 @@ Interface, Trait and class(es) for WordPress Post Type.
     composer require devaloka/post-type
     ```
 
+[stable-image]: https://poser.pugx.org/devaloka/post-type/v/stable
+[stable-url]: https://packagist.org/packages/devaloka/post-type
+
+[unstable-image]: https://poser.pugx.org/devaloka/post-type/v/unstable
+[unstable-url]: https://packagist.org/packages/devaloka/post-type
+
+[license-image]: https://poser.pugx.org/devaloka/post-type/license
+[license-url]: https://packagist.org/packages/devaloka/post-type
+
 [travis-image]: https://travis-ci.org/devaloka/post-type.svg?branch=master
 [travis-url]: https://travis-ci.org/devaloka/post-type
-
-[packagist-image]: https://img.shields.io/packagist/v/devaloka/post-type.svg
-[packagist-url]: https://packagist.org/packages/devaloka/post-type
