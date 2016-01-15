@@ -4,6 +4,7 @@
 [![Latest Unstable Version][unstable-image]][unstable-url]
 [![License][license-image]][license-url]
 [![Build Status][travis-image]][travis-url]
+[![Coverage Status][coveralls-image]][coveralls-url]
 
 Interface, Trait and class(es) for WordPress Sidebar.
 
@@ -26,3 +27,6 @@ Interface, Trait and class(es) for WordPress Sidebar.
 
 [travis-image]: https://travis-ci.org/devaloka/sidebar.svg?branch=master
 [travis-url]: https://travis-ci.org/devaloka/sidebar
+
+[coveralls-image]: https://coveralls.io/repos/devaloka/sidebar/badge.svg?branch=master&service=github
+[coveralls-url]: https://coveralls.io/github/devaloka/sidebar?branch=master
