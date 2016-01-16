@@ -147,7 +147,7 @@ class TaxonomyTest extends PHPUnit_Framework_TestCase
 
         $this->assertArrayHasKey('test-post-type', $taxonomy->getObjectTypes());
 
-        $taxonomy->removeObjectType('test-post-type');
+        $taxonomy->removeObjectType($postType);
 
         $this->assertArrayNotHasKey('test-post-type', $taxonomy->getObjectTypes());
     }
