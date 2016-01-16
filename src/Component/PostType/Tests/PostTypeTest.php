@@ -1,5 +1,5 @@
 <?php
-namespace Tests\Devaloka\Component\PostType;
+namespace Devaloka\Component\PostType\Tests;
 
 use Brain\Monkey;
 use Mockery;
@@ -8,7 +8,7 @@ use PHPUnit_Framework_TestCase;
 /**
  * Class PostTypeTest
  *
- * @package Tests\Devaloka\Component\PostType
+ * @package Devaloka\Component\PostType\Tests
  * @author Whizark <devaloka@whizark.com>
  */
 class PostTypeTest extends PHPUnit_Framework_TestCase

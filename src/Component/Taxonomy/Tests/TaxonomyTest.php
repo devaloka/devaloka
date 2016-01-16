@@ -1,5 +1,5 @@
 <?php
-namespace Tests\Devaloka\Component\Taxonomy;
+namespace Devaloka\Component\Taxonomy\Tests;
 
 use Brain\Monkey;
 use Devaloka\Component\Taxonomy\TaxonomyInterface;
@@ -9,7 +9,7 @@ use PHPUnit_Framework_TestCase;
 /**
  * Class TaxonomyTest
  *
- * @package Tests\Devaloka\Component\Taxonomy
+ * @package Devaloka\Component\Taxonomy\Tests
  * @author Whizark <devaloka@whizark.com>
  */
 class TaxonomyTest extends PHPUnit_Framework_TestCase

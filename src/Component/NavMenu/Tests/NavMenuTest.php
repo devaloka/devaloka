@@ -1,5 +1,5 @@
 <?php
-namespace Tests\Devaloka\Component\NavMenu;
+namespace Devaloka\Component\NavMenu\Tests;
 
 use Brain\Monkey;
 use Mockery;
@@ -8,7 +8,7 @@ use PHPUnit_Framework_TestCase;
 /**
  * Class NavMenuTest
  *
- * @package Tests\Devaloka\Component\NavMenu
+ * @package Devaloka\Component\NavMenu\Tests
  * @author Whizark <devaloka@whizark.com>
  */
 class NavMenuTest extends PHPUnit_Framework_TestCase

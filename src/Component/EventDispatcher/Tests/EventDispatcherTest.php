@@ -1,5 +1,5 @@
 <?php
-namespace Tests\Devaloka\Component\EventDispatcher;
+namespace Devaloka\Component\EventDispatcher\Tests;
 
 use Brain\Monkey;
 use Devaloka\Component\EventDispatcher\EventDispatcher;
@@ -10,7 +10,7 @@ use Symfony\Component\EventDispatcher\EventSubscriberInterface;
 /**
  * Class EventDispatcherTest
  *
- * @package Tests\Devaloka\Component\EventDispatcher
+ * @package Devaloka\Component\EventDispatcher\Tests
  * @author Whizark <devaloka@whizark.com>
  */
 class EventDispatcherTest extends PHPUnit_Framework_TestCase

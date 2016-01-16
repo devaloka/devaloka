@@ -1,5 +1,5 @@
 <?php
-namespace Tests\Devaloka\Component\Sidebar;
+namespace Devaloka\Component\Sidebar\Tests;
 
 use Brain\Monkey;
 use Mockery;
@@ -8,7 +8,7 @@ use PHPUnit_Framework_TestCase;
 /**
  * Class SidebarTest
  *
- * @package Tests\Devaloka\Component\Sidebar
+ * @package Devaloka\Component\Sidebar\Tests
  * @author Whizark <devaloka@whizark.com>
  */
 class SidebarTest extends PHPUnit_Framework_TestCase

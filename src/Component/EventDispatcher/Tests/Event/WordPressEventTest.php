@@ -1,5 +1,5 @@
 <?php
-namespace Tests\Devaloka\Common;
+namespace Devaloka\Component\EventDispatcher\Tests\Event;
 
 use Devaloka\Component\EventDispatcher\Event\WordPressEvent;
 use PHPUnit_Framework_TestCase;
@@ -7,7 +7,7 @@ use PHPUnit_Framework_TestCase;
 /**
  * Class WordPressEventTest
  *
- * @package Tests\Devaloka\Common
+ * @package Devaloka\Component\EventDispatcher\Tests\Event
  * @author Whizark <devaloka@whizark.com>
  */
 class WordPressEventTest extends PHPUnit_Framework_TestCase
