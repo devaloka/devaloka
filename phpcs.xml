@@ -9,4 +9,7 @@
     <file>./includes/</file>
     <file>./tests/</file>
     <file>./devaloka.php</file>
+
+    <exclude-pattern>*/node_modules/*</exclude-pattern>
+    <exclude-pattern>*/vendor/*</exclude-pattern>
 </ruleset>
