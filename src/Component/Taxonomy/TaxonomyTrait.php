@@ -19,8 +19,6 @@ use RuntimeException;
  * Trait TaxonomyTrait
  *
  * @package Devaloka\Taxonomy
- *
- * @codeCoverageIgnore
  */
 trait TaxonomyTrait
 {
