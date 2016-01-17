@@ -18,7 +18,7 @@ namespace Devaloka\Component\Widget;
  * @property string $idBase
  * @property mixed[] $widgetOptions
  * @property mixed[] $controlOptions
- * @property bool $isUpdated
+ * @property bool $updated
  * @property string $optionName
  * @property string $altOptionName
  */
@@ -47,7 +47,7 @@ trait WidgetTrait
 
                 break;
 
-            case 'isUpdated':
+            case 'updated':
                 return $this->updated;
 
                 break;
@@ -92,7 +92,7 @@ trait WidgetTrait
 
                 break;
 
-            case 'isUpdated':
+            case 'updated':
                 $this->updated = $value;
 
                 break;

@@ -35,7 +35,7 @@ class WidgetTest extends PHPUnit_Framework_TestCase
             'idBase'         => ['idBase', 'id_base',],
             'widgetOptions'  => ['widgetOptions', 'widget_options'],
             'controlOptions' => ['controlOptions', 'control_options'],
-            'isUpdated'      => ['isUpdated', 'updated'],
+            'updated'        => ['updated', 'updated'],
             'optionName'     => ['optionName', 'option_name'],
             'altOptionName'  => ['altOptionName', 'alt_option_name'],
         ];
