@@ -79,7 +79,7 @@ trait ControlAwareWidgetTrait
      *
      * @return mixed[]|bool The settings to save or false to cancel saving.
      */
-    public function update($newInstance, $oldInstance)
+    public function update(array $newInstance, array $oldInstance)
     {
         return parent::update($newInstance, $oldInstance);
     }
