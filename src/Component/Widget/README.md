@@ -4,6 +4,7 @@
 [![Latest Unstable Version][unstable-image]][unstable-url]
 [![License][license-image]][license-url]
 [![Build Status][travis-image]][travis-url]
+[![Coverage Status][coveralls-image]][coveralls-url]
 
 Interface, Trait and class(es) for WordPress Widget.
 
@@ -26,3 +27,6 @@ Interface, Trait and class(es) for WordPress Widget.
 
 [travis-image]: https://travis-ci.org/devaloka/widget.svg?branch=master
 [travis-url]: https://travis-ci.org/devaloka/widget
+
+[coveralls-image]: https://coveralls.io/repos/devaloka/widget/badge.svg?branch=master&service=github
+[coveralls-url]: https://coveralls.io/github/devaloka/widget?branch=master

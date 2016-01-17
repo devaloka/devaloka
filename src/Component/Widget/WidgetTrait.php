@@ -21,8 +21,6 @@ namespace Devaloka\Component\Widget;
  * @property bool $isUpdated
  * @property string $optionName
  * @property string $altOptionName
- *
- * @codeCoverageIgnore
  */
 trait WidgetTrait
 {

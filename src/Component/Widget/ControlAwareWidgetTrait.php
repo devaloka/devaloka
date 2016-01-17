@@ -14,8 +14,6 @@ namespace Devaloka\Component\Widget;
  * Class ControlAwareWidgetTrait
  *
  * @package Devaloka\Component\Widget
- *
- * @codeCoverageIgnore
  */
 trait ControlAwareWidgetTrait
 {
