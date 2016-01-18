@@ -14,8 +14,6 @@ namespace Devaloka\Component\DependencyInjection;
  * Trait ContainerAwareTrait
  *
  * @package Devaloka\Component\DependencyInjection
- *
- * @codeCoverageIgnore
  */
 trait ContainerAwareTrait
 {

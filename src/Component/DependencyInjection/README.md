@@ -4,6 +4,7 @@
 [![Latest Unstable Version][unstable-image]][unstable-url]
 [![License][license-image]][license-url]
 [![Build Status][travis-image]][travis-url]
+[![Coverage Status][coveralls-image]][coveralls-url]
 
 Devaloka DependencyInjection Component for WordPress.
 
@@ -26,3 +27,6 @@ Devaloka DependencyInjection Component for WordPress.
 
 [travis-image]: https://travis-ci.org/devaloka/dependency-injection.svg?branch=master
 [travis-url]: https://travis-ci.org/devaloka/dependency-injection
+
+[coveralls-image]: https://coveralls.io/repos/devaloka/dependency-injection/badge.svg?branch=master&service=github
+[coveralls-url]: https://coveralls.io/github/devaloka/dependency-injection?branch=master
