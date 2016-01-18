@@ -19,5 +19,10 @@ namespace Devaloka\Component\DependencyInjection;
  */
 interface ContainerAwareInterface
 {
+    /**
+     * Sets an instance of ContainerInterface.
+     *
+     * @param ContainerInterface|null $container The ContainerInterface.
+     */
     public function setContainer(ContainerInterface $container = null);
 }

@@ -20,12 +20,14 @@ namespace Devaloka\Component\DependencyInjection;
 trait ContainerAwareTrait
 {
     /**
-     * @var ContainerInterface
+     * @var ContainerInterface An instance of ContainerInterface.
      */
     protected $container;
 
     /**
-     * @param ContainerInterface $container
+     * Sets an instance of ContainerInterface.
+     *
+     * @param ContainerInterface|null $container The ContainerInterface.
      */
     public function setContainer(ContainerInterface $container = null)
     {
