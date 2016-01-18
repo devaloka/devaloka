@@ -16,8 +16,6 @@ use Symfony\Component\EventDispatcher\EventDispatcherInterface;
  * Trait EventDispatcherAwareTrait
  *
  * @package Devaloka\Component\EventDispatcher
- *
- * @codeCoverageIgnore
  */
 trait EventDispatcherAwareTrait
 {
