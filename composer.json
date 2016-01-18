@@ -88,7 +88,7 @@
             ".remarkrc",
             "gulpfile.js",
             "composer.json",
-            "phpcs.xml",
+            "phpcs.xml.dist",
             "phpunit.xml.dist",
             ".coveralls.yml",
             "tests/",

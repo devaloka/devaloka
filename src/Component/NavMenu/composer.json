@@ -67,7 +67,7 @@
             "npm-shrinkwrap.json",
             ".remarkrc",
             "composer.json",
-            "phpcs.xml",
+            "phpcs.xml.dist",
             "phpunit.xml.dist",
             ".coveralls.yml",
             "Tests/",
