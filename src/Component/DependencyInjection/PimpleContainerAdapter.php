@@ -16,8 +16,6 @@ use Pimple\Container;
  * Class PimpleContainerAdapter
  *
  * @package Devaloka\Component\DependencyInjection
- *
- * @codeCoverageIgnore
  */
 class PimpleContainerAdapter implements ContainerInterface
 {
