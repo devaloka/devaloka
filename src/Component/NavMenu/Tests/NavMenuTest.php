@@ -2,6 +2,7 @@
 namespace Devaloka\Component\NavMenu\Tests;
 
 use Brain\Monkey;
+use Devaloka\Component\NavMenu\NavMenu;
 use Mockery;
 use PHPUnit_Framework_TestCase;
 
@@ -29,6 +30,33 @@ class NavMenuTest extends PHPUnit_Framework_TestCase
         Monkey::tearDownWP();
     }
 
+    // Tests for NavMenuInterface::getLocation()
+
+    public function testGetLocationShouldReturnTheLocation()
+    {
+        $navMenu = new NavMenu('location', 'Description.');
+
+        $this->assertSame('location', $navMenu->getLocation());
+    }
+
+    // Tests for NavMenuInterface::getDescription()
+
+    public function testGetDescriptionShouldReturnTheDescription()
+    {
+        $navMenu = new NavMenu('location', 'Description.');
+
+        $this->assertSame('Description.', $navMenu->getDescription());
+    }
+
+    // Tests for NavMenuInterface::getDeffaultOptions()
+
+    public function testGetDefaultOptionsShouldReturnTheDefaultOptions()
+    {
+        $navMenu = new NavMenu('location', 'Description.', ['menu_id' => 'test-menu']);
+
+        $this->assertSame(['menu_id' => 'test-menu'], $navMenu->getDefaultOptions());
+    }
+
     // Tests for NavMenuInterface::render()
 
     public function testRenderShouldInvokeWpNavMenuWithDefaultOptions()
@@ -36,7 +64,7 @@ class NavMenuTest extends PHPUnit_Framework_TestCase
         $defaultOptions  = ['menu_id' => 'test-menu'];
         $expectedOptions = ['menu_id' => 'test-menu', 'echo' => false];
 
-        $navMenu = $this->createNavMenu($defaultOptions);
+        $navMenu = new NavMenu('location', 'Description.', $defaultOptions);
 
         Monkey::functions()->expect('wp_nav_menu')
             ->with($expectedOptions)
@@ -53,7 +81,7 @@ class NavMenuTest extends PHPUnit_Framework_TestCase
         $defaultOptions  = ['menu_id' => 'test-menu'];
         $expectedOptions = ['menu_id' => 'test-menu-2', 'echo' => false];
 
-        $navMenu = $this->createNavMenu($defaultOptions);
+        $navMenu = new NavMenu('location', 'Description.', $defaultOptions);
 
         Monkey::functions()->expect('wp_nav_menu')
             ->with($expectedOptions)
@@ -69,7 +97,7 @@ class NavMenuTest extends PHPUnit_Framework_TestCase
     {
         $expectedOptions = ['echo' => false];
 
-        $navMenu = $this->createNavMenu();
+        $navMenu = new NavMenu('location', 'Description.');
 
         Monkey::functions()->expect('wp_nav_menu')
             ->with($expectedOptions)
@@ -88,7 +116,7 @@ class NavMenuTest extends PHPUnit_Framework_TestCase
         $defaultOptions  = ['menu_id' => 'test-menu'];
         $expectedOptions = ['menu_id' => 'test-menu', 'echo' => true];
 
-        $navMenu = $this->createNavMenu($defaultOptions);
+        $navMenu = new NavMenu('location', 'Description.', $defaultOptions);
 
         Monkey::functions()->expect('wp_nav_menu')
             ->with($expectedOptions)
@@ -102,7 +130,7 @@ class NavMenuTest extends PHPUnit_Framework_TestCase
         $defaultOptions  = ['menu_id' => 'test-menu'];
         $expectedOptions = ['menu_id' => 'test-menu-2', 'echo' => true];
 
-        $navMenu = $this->createNavMenu($defaultOptions);
+        $navMenu = new NavMenu('location', 'Description.', $defaultOptions);
 
         Monkey::functions()->expect('wp_nav_menu')
             ->with($expectedOptions)
@@ -115,7 +143,7 @@ class NavMenuTest extends PHPUnit_Framework_TestCase
     {
         $expectedOptions = ['echo' => true];
 
-        $navMenu = $this->createNavMenu();
+        $navMenu = new NavMenu('location', 'Description.');
 
         Monkey::functions()->expect('wp_nav_menu')
             ->with($expectedOptions)
@@ -128,7 +156,7 @@ class NavMenuTest extends PHPUnit_Framework_TestCase
 
     public function testRegisterShouldInvokeRegisterNavMenuWithLocationAndDescription()
     {
-        $navMenu = $this->createNavMenu();
+        $navMenu = new NavMenu('location', 'Description.');
 
         Monkey::functions()->expect('register_nav_menu')
             ->with('location', 'Description.')
@@ -141,7 +169,7 @@ class NavMenuTest extends PHPUnit_Framework_TestCase
 
     public function testUnregisterShouldInvokeUnregisterNavMenu()
     {
-        $navMenu = $this->createNavMenu();
+        $navMenu = new NavMenu('location', 'Description.');
 
         Monkey::functions()->expect('unregister_nav_menu')
             ->with('location')
@@ -156,7 +184,7 @@ class NavMenuTest extends PHPUnit_Framework_TestCase
      */
     public function testUnregisterShouldThrowRuntimeExceptionIfItFailed()
     {
-        $navMenu = $this->createNavMenu();
+        $navMenu = new NavMenu('location', 'Description.');
 
         Monkey::functions()->expect('unregister_nav_menu')
             ->with('location')
@@ -164,23 +192,5 @@ class NavMenuTest extends PHPUnit_Framework_TestCase
             ->once();
 
         $navMenu->unregister();
-    }
-
-    // Methods for the tests.
-
-    protected function createNavMenu(array $defaultOptions = [])
-    {
-        $navMenu = Mockery::mock('Devaloka\Component\NavMenu\AbstractNavMenu')->makePartial();
-
-        $navMenu->shouldReceive('getLocation')
-            ->andReturn('location');
-
-        $navMenu->shouldReceive('getDescription')
-            ->andReturn('Description.');
-
-        $navMenu->shouldReceive('getDefaultOptions')
-            ->andReturn($defaultOptions);
-
-        return $navMenu;
     }
 }
