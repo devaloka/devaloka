@@ -15,7 +15,7 @@ namespace Devaloka\Component\NavMenu;
 use RuntimeException;
 
 /**
- * Class NavMenuTrait
+ * Trait NavMenuTrait
  *
  * @package Devaloka\Component\NavMenu
  */

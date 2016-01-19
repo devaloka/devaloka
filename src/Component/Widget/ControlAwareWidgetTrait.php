@@ -11,7 +11,7 @@
 namespace Devaloka\Component\Widget;
 
 /**
- * Class ControlAwareWidgetTrait
+ * Trait ControlAwareWidgetTrait
  *
  * @package Devaloka\Component\Widget
  */
