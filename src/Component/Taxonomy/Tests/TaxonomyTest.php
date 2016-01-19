@@ -2,6 +2,7 @@
 namespace Devaloka\Component\Taxonomy\Tests;
 
 use Brain\Monkey;
+use Devaloka\Component\Taxonomy\Taxonomy;
 use Devaloka\Component\Taxonomy\TaxonomyInterface;
 use Mockery;
 use PHPUnit_Framework_TestCase;
@@ -30,11 +31,29 @@ class TaxonomyTest extends PHPUnit_Framework_TestCase
         Monkey::tearDownWP();
     }
 
+    // Tests for TaxonomyInterface::getName()
+
+    public function testGetNameShouldReturnTheName()
+    {
+        $taxonomy = new Taxonomy('test-taxonomy');
+
+        $this->assertSame('test-taxonomy', $taxonomy->getName());
+    }
+
+    // Tests for TaxonomyInterface::getOptions()
+
+    public function testGetOptionsShouldReturnTheOptions()
+    {
+        $taxonomy = new Taxonomy('test-post-type', ['menu_name' => 'Taxonomy']);
+
+        $this->assertSame(['menu_name' => 'Taxonomy'], $taxonomy->getOptions());
+    }
+
     // Tests for TaxonomyInterface::addObjectType(), getObjectTypes()
 
     public function testAddObjectTypeWithStringShouldAddTaxonomy()
     {
-        $taxonomy = $this->createTaxonomy();
+        $taxonomy = new Taxonomy('test-taxonomy');
 
         Monkey::functions()->expect('taxonomy_exists')
             ->with('test-taxonomy')
@@ -59,7 +78,7 @@ class TaxonomyTest extends PHPUnit_Framework_TestCase
     public function testAddObjectTypeWithPostTypeInterfaceShouldAddTaxonomy()
     {
         $postType = $this->createPostType();
-        $taxonomy = $this->createTaxonomy();
+        $taxonomy = new Taxonomy('test-taxonomy');
 
         Monkey::functions()->expect('taxonomy_exists')
             ->with('test-taxonomy')
@@ -79,8 +98,8 @@ class TaxonomyTest extends PHPUnit_Framework_TestCase
 
     public function testAddObjectTypeShouldRegisterTaxonomyIfItAlreadyExists()
     {
-        $taxonomy = $this->createTaxonomy();
         $postType = $this->createPostType();
+        $taxonomy = new Taxonomy('test-taxonomy');
 
         Monkey::functions()->expect('taxonomy_exists')
             ->with('test-taxonomy')
@@ -105,7 +124,7 @@ class TaxonomyTest extends PHPUnit_Framework_TestCase
 
     public function testRemoveObjectTypeShouldRemoveTaxonomyWhichIsAddedWithString()
     {
-        $taxonomy = $this->createTaxonomy();
+        $taxonomy = new Taxonomy('test-taxonomy');
 
         Monkey::functions()->expect('taxonomy_exists')
             ->with('test-taxonomy')
@@ -130,7 +149,7 @@ class TaxonomyTest extends PHPUnit_Framework_TestCase
     public function testRemoveObjectTypeShouldRemoveTaxonomyWhichIsAddedWithPostTypeInterface()
     {
         $postType = $this->createPostType();
-        $taxonomy = $this->createTaxonomy();
+        $taxonomy = new Taxonomy('test-taxonomy');
 
         Monkey::functions()->expect('taxonomy_exists')
             ->with('test-taxonomy')
@@ -155,7 +174,7 @@ class TaxonomyTest extends PHPUnit_Framework_TestCase
     public function testRemoveObjectTypeShouldUnregisterTaxonomyIfItAlreadyExists()
     {
         $postType = $this->createPostType();
-        $taxonomy = $this->createTaxonomy();
+        $taxonomy = new Taxonomy('test-taxonomy');
 
         Monkey::functions()->expect('taxonomy_exists')
             ->with('test-taxonomy')
@@ -181,7 +200,7 @@ class TaxonomyTest extends PHPUnit_Framework_TestCase
     public function testGetObjectTypeShouldMergeObjectTypesIfItAlreadyExists()
     {
         $postType = $this->createPostType();
-        $taxonomy = $this->createTaxonomy();
+        $taxonomy = new Taxonomy('test-taxonomy');
 
         Monkey::functions()->expect('taxonomy_exists')
             ->with('test-taxonomy')
@@ -203,10 +222,7 @@ class TaxonomyTest extends PHPUnit_Framework_TestCase
     public function testRegisterShouldRegisterTaxonomy()
     {
         $postType = $this->createPostType();
-        $taxonomy = $this->createTaxonomy();
-
-        $taxonomy->shouldReceive('getOptions')
-            ->andReturn(['menu_name' => 'Taxonomy']);
+        $taxonomy = new Taxonomy('test-taxonomy', ['menu_name' => 'Taxonomy']);
 
         Monkey::functions()->expect('taxonomy_exists')
             ->with('test-taxonomy')
@@ -230,7 +246,7 @@ class TaxonomyTest extends PHPUnit_Framework_TestCase
      */
     public function testRegisterShouldThrowRuntimeExceptionWhenItFailed()
     {
-        $taxonomy = $this->createTaxonomy();
+        $taxonomy = new Taxonomy('test-taxonomy');
 
         Monkey::functions()->expect('register_taxonomy');
         Monkey::functions()->expect('is_wp_error')
@@ -244,7 +260,7 @@ class TaxonomyTest extends PHPUnit_Framework_TestCase
     public function testUnregisterShouldUnregisterTaxonomy()
     {
         $postType = $this->createPostType();
-        $taxonomy = $this->createTaxonomy();
+        $taxonomy = new Taxonomy('test-taxonomy');
 
         Monkey::functions()->expect('taxonomy_exists')
             ->with('test-taxonomy')
@@ -271,7 +287,7 @@ class TaxonomyTest extends PHPUnit_Framework_TestCase
      */
     public function testUnregisterShouldThrowRuntimeExceptionWhenItFailed()
     {
-        $taxonomy = $this->createTaxonomy();
+        $taxonomy = new Taxonomy('test-taxonomy');
 
         Monkey::functions()->expect('taxonomy_exists')
             ->with('test-taxonomy')
