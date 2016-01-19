@@ -37,7 +37,7 @@ trait SidebarTrait
     }
 
     /**
-     * Renders the Sidebar with the given options.
+     * Renders the Sidebar.
      *
      * @return string The rendered HTML.
      */
@@ -57,7 +57,7 @@ trait SidebarTrait
     }
 
     /**
-     * Displays the Sidebar with the given options.
+     * Displays the Sidebar.
      */
     public function display()
     {
