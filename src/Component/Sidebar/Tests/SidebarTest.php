@@ -2,6 +2,7 @@
 namespace Devaloka\Component\Sidebar\Tests;
 
 use Brain\Monkey;
+use Devaloka\Component\Sidebar\Sidebar;
 use Mockery;
 use PHPUnit_Framework_TestCase;
 
@@ -29,11 +30,29 @@ class SidebarTest extends PHPUnit_Framework_TestCase
         Monkey::tearDownWP();
     }
 
+    // Tests for SidebarInterface::getId()
+
+    public function testGetIdShouldReturnTheId()
+    {
+        $sidebar = new Sidebar('test-sidebar');
+
+        $this->assertSame('test-sidebar', $sidebar->getId());
+    }
+
+    // Tests for SidebarInterface::getOptions()
+
+    public function testGetOptionsShouldReturnTheOptions()
+    {
+        $sidebar = new Sidebar('test-sidebar', ['name' => 'Sidebar']);
+
+        $this->assertSame(['name' => 'Sidebar'], $sidebar->getOptions());
+    }
+
     // Tests for SidebarInterface::render()
 
     public function testRenderShouldInvokeDynamicSidebar()
     {
-        $sidebar = $this->createSidebar();
+        $sidebar = new Sidebar('test-sidebar');
 
         Monkey::functions()->expect('is_active_sidebar')
             ->with('test-sidebar')
@@ -48,7 +67,7 @@ class SidebarTest extends PHPUnit_Framework_TestCase
 
     public function testRenderShouldReturnEmptyStringWhenTheSidebarIsNotActive()
     {
-        $sidebar = $this->createSidebar();
+        $sidebar = new Sidebar('test-sidebar');
 
         Monkey::functions()->expect('is_active_sidebar')
             ->with('test-sidebar')
@@ -66,7 +85,7 @@ class SidebarTest extends PHPUnit_Framework_TestCase
 
     public function testDisplayShouldInvokeDynamicSidebar()
     {
-        $sidebar = $this->createSidebar();
+        $sidebar = new Sidebar('test-sidebar');
 
         Monkey::functions()->expect('is_active_sidebar')
             ->with('test-sidebar')
@@ -81,7 +100,7 @@ class SidebarTest extends PHPUnit_Framework_TestCase
 
     public function testDisplayShouldReturnEmptyStringWhenTheSidebarIsNotActive()
     {
-        $sidebar = $this->createSidebar();
+        $sidebar = new Sidebar('test-sidebar');
 
         Monkey::functions()->expect('is_active_sidebar')
             ->with('test-sidebar')
@@ -97,13 +116,13 @@ class SidebarTest extends PHPUnit_Framework_TestCase
 
     public function testRegisterShouldInvokeRegisterSidebarWithOptions()
     {
-        $sidebar = $this->createSidebar();
+        $options         = ['name' => 'Sidebar'];
+        $expectedOptions = ['name' => 'Sidebar', 'id' => 'test-sidebar'];
 
-        $sidebar->shouldReceive('getOptions')
-            ->andReturn(['name' => 'Sidebar']);
+        $sidebar = new Sidebar('test-sidebar', $options);
 
         Monkey::functions()->expect('register_sidebar')
-            ->with(['name' => 'Sidebar', 'id' => 'test-sidebar'])
+            ->with($expectedOptions)
             ->once();
 
         $sidebar->register();
@@ -111,13 +130,13 @@ class SidebarTest extends PHPUnit_Framework_TestCase
 
     public function testRegisterShouldAlwaysOverrideId()
     {
-        $sidebar = $this->createSidebar();
+        $options         = ['id' => 'test-sidebar-2'];
+        $expectedOptions = ['id' => 'test-sidebar'];
 
-        $sidebar->shouldReceive('getOptions')
-            ->andReturn(['id' => 'test-sidebar-2']);
+        $sidebar = new Sidebar('test-sidebar', $options);
 
         Monkey::functions()->expect('register_sidebar')
-            ->with(['id' => 'test-sidebar'])
+            ->with($expectedOptions)
             ->once();
 
         $sidebar->register();
@@ -127,24 +146,12 @@ class SidebarTest extends PHPUnit_Framework_TestCase
 
     public function testUnregisterShouldInvokeUnregisterSidebar()
     {
-        $sidebar = $this->createSidebar();
+        $sidebar = new Sidebar('test-sidebar');
 
         Monkey::functions()->expect('unregister_sidebar')
             ->with('test-sidebar')
             ->once();
 
         $sidebar->unregister();
-    }
-
-    // Methods for the tests.
-
-    protected function createSidebar()
-    {
-        $sidebar = Mockery::mock('Devaloka\Component\Sidebar\AbstractSidebar')->makePartial();
-
-        $sidebar->shouldReceive('getId')
-            ->andReturn('test-sidebar');
-
-        return $sidebar;
     }
 }
