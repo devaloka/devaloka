@@ -2,6 +2,7 @@
 namespace Devaloka\Component\PostType\Tests;
 
 use Brain\Monkey;
+use Devaloka\Component\PostType\PostType;
 use Mockery;
 use PHPUnit_Framework_TestCase;
 
@@ -29,17 +30,33 @@ class PostTypeTest extends PHPUnit_Framework_TestCase
         Monkey::tearDownWP();
     }
 
+    // Tests for PostTypeInterface::getName()
+
+    public function testGetNameShouldReturnTheName()
+    {
+        $postType = new PostType('test-post-type');
+
+        $this->assertSame('test-post-type', $postType->getName());
+    }
+
+    // Tests for PostTypeInterface::getOptions()
+
+    public function testGetOptionsShouldReturnTheOptions()
+    {
+        $postType = new PostType('test-post-type', ['menu_name' => 'Test Post Type']);
+
+        $this->assertSame(['menu_name' => 'Test Post Type'], $postType->getOptions());
+    }
+
     // Tests for PostTypeInterface::register()
 
     public function testRegisterShouldInvokeRegisterPostTypeWithOptions()
     {
-        $postType = $this->createPostType();
-
-        $postType->shouldReceive('getOptions')
-            ->andReturn(['menu_name' => 'Test Post Type']);
+        $options  = ['menu_name' => 'Test Post Type'];
+        $postType = new PostType('test-post-type', $options);
 
         Monkey::functions()->expect('register_post_type')
-            ->with('test-post-type', ['menu_name' => 'Test Post Type'])
+            ->with('test-post-type', $options)
             ->once();
 
         Monkey::functions()->expect('is_wp_error')
@@ -53,13 +70,11 @@ class PostTypeTest extends PHPUnit_Framework_TestCase
      */
     public function testRegisterShouldThrowRuntimeExceptionWhenItFailed()
     {
-        $postType = $this->createPostType();
-
-        $postType->shouldReceive('getOptions')
-            ->andReturn(['menu_name' => 'Test Post Type']);
+        $options  = ['menu_name' => 'Test Post Type'];
+        $postType = new PostType('test-post-type', $options);
 
         Monkey::functions()->expect('register_post_type')
-            ->with('test-post-type', ['menu_name' => 'Test Post Type'])
+            ->with('test-post-type', $options)
             ->once();
 
         Monkey::functions()->expect('is_wp_error')
@@ -76,20 +91,8 @@ class PostTypeTest extends PHPUnit_Framework_TestCase
      */
     public function testUnregisterShouldAlwaysThrowLogicException()
     {
-        $postType = $this->createPostType();
+        $postType = new PostType('test-post-type');
 
         $postType->unregister();
-    }
-
-    // Methods for the tests.
-
-    protected function createPostType()
-    {
-        $postType = Mockery::mock('Devaloka\Component\PostType\AbstractPostType')->makePartial();
-
-        $postType->shouldReceive('getName')
-            ->andReturn('test-post-type');
-
-        return $postType;
     }
 }
