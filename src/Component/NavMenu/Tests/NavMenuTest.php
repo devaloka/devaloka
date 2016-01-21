@@ -30,7 +30,7 @@ class NavMenuTest extends PHPUnit_Framework_TestCase
         Monkey::tearDownWP();
     }
 
-    // Tests for NavMenuInterface::getLocation()
+    // Tests for NavMenu::getLocation()
 
     public function testGetLocationShouldReturnTheLocation()
     {
@@ -39,7 +39,7 @@ class NavMenuTest extends PHPUnit_Framework_TestCase
         $this->assertSame('location', $navMenu->getLocation());
     }
 
-    // Tests for NavMenuInterface::getDescription()
+    // Tests for NavMenu::getDescription()
 
     public function testGetDescriptionShouldReturnTheDescription()
     {
@@ -48,7 +48,7 @@ class NavMenuTest extends PHPUnit_Framework_TestCase
         $this->assertSame('Description.', $navMenu->getDescription());
     }
 
-    // Tests for NavMenuInterface::getDeffaultOptions()
+    // Tests for NavMenu::getDeffaultOptions()
 
     public function testGetDefaultOptionsShouldReturnTheDefaultOptions()
     {
@@ -57,7 +57,7 @@ class NavMenuTest extends PHPUnit_Framework_TestCase
         $this->assertSame(['menu_id' => 'test-menu'], $navMenu->getDefaultOptions());
     }
 
-    // Tests for NavMenuInterface::render()
+    // Tests for NavMenu::render()
 
     public function testRenderShouldInvokeWpNavMenuWithDefaultOptions()
     {
@@ -109,7 +109,7 @@ class NavMenuTest extends PHPUnit_Framework_TestCase
         $this->assertSame('<nav></nav>', $html);
     }
 
-    // Tests for NavMenuInterface::display()
+    // Tests for NavMenu::display()
 
     public function testDisplayShouldInvokeWpNavMenuWithDefaultOptions()
     {
@@ -152,7 +152,7 @@ class NavMenuTest extends PHPUnit_Framework_TestCase
         $navMenu->display(['echo' => false]);
     }
 
-    // Tests for NavMenuInterface::register()
+    // Tests for NavMenu::register()
 
     public function testRegisterShouldInvokeRegisterNavMenuWithLocationAndDescription()
     {
@@ -165,7 +165,7 @@ class NavMenuTest extends PHPUnit_Framework_TestCase
         $navMenu->register();
     }
 
-    // Tests for NavMenuInterface::unregister()
+    // Tests for NavMenu::unregister()
 
     public function testUnregisterShouldInvokeUnregisterNavMenu()
     {

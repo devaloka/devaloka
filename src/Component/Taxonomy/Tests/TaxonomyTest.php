@@ -31,7 +31,7 @@ class TaxonomyTest extends PHPUnit_Framework_TestCase
         Monkey::tearDownWP();
     }
 
-    // Tests for TaxonomyInterface::getName()
+    // Tests for Taxonomy::getName()
 
     public function testGetNameShouldReturnTheName()
     {
@@ -40,7 +40,7 @@ class TaxonomyTest extends PHPUnit_Framework_TestCase
         $this->assertSame('test-taxonomy', $taxonomy->getName());
     }
 
-    // Tests for TaxonomyInterface::getOptions()
+    // Tests for Taxonomy::getOptions()
 
     public function testGetOptionsShouldReturnTheOptions()
     {
@@ -49,7 +49,7 @@ class TaxonomyTest extends PHPUnit_Framework_TestCase
         $this->assertSame(['menu_name' => 'Taxonomy'], $taxonomy->getOptions());
     }
 
-    // Tests for TaxonomyInterface::addObjectType(), getObjectTypes()
+    // Tests for Taxonomy::addObjectType(), getObjectTypes()
 
     public function testAddObjectTypeWithStringShouldAddTaxonomy()
     {
@@ -120,7 +120,7 @@ class TaxonomyTest extends PHPUnit_Framework_TestCase
         $taxonomy->addObjectType($postType);
     }
 
-    // Tests for TaxonomyInterface::removeObjectType(), getObjectTypes()
+    // Tests for Taxonomy::removeObjectType(), getObjectTypes()
 
     public function testRemoveObjectTypeShouldRemoveTaxonomyWhichIsAddedWithString()
     {
@@ -195,7 +195,7 @@ class TaxonomyTest extends PHPUnit_Framework_TestCase
         $taxonomy->removeObjectType($postType);
     }
 
-    // Tests for TaxonomyInterface::getObjectTypes()
+    // Tests for Taxonomy::getObjectTypes()
 
     public function testGetObjectTypeShouldMergeObjectTypesIfItAlreadyExists()
     {
@@ -217,7 +217,7 @@ class TaxonomyTest extends PHPUnit_Framework_TestCase
         $this->assertArraySubset(['test-post-type' => $postType], $taxonomy->getObjectTypes(), true);
     }
 
-    // Tests for TaxonomyInterface::register()
+    // Tests for Taxonomy::register()
 
     public function testRegisterShouldRegisterTaxonomy()
     {
@@ -255,7 +255,7 @@ class TaxonomyTest extends PHPUnit_Framework_TestCase
         $taxonomy->register();
     }
 
-    // Tests for TaxonomyInterface::unregister()
+    // Tests for Taxonomy::unregister()
 
     public function testUnregisterShouldUnregisterTaxonomy()
     {

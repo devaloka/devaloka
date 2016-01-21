@@ -30,7 +30,7 @@ class SidebarTest extends PHPUnit_Framework_TestCase
         Monkey::tearDownWP();
     }
 
-    // Tests for SidebarInterface::getId()
+    // Tests for Sidebar::getId()
 
     public function testGetIdShouldReturnTheId()
     {
@@ -39,7 +39,7 @@ class SidebarTest extends PHPUnit_Framework_TestCase
         $this->assertSame('test-sidebar', $sidebar->getId());
     }
 
-    // Tests for SidebarInterface::getOptions()
+    // Tests for Sidebar::getOptions()
 
     public function testGetOptionsShouldReturnTheOptions()
     {
@@ -48,7 +48,7 @@ class SidebarTest extends PHPUnit_Framework_TestCase
         $this->assertSame(['name' => 'Sidebar'], $sidebar->getOptions());
     }
 
-    // Tests for SidebarInterface::render()
+    // Tests for Sidebar::render()
 
     public function testRenderShouldInvokeDynamicSidebar()
     {
@@ -81,7 +81,7 @@ class SidebarTest extends PHPUnit_Framework_TestCase
         $this->assertSame('', $html);
     }
 
-    // Tests for SidebarInterface::display()
+    // Tests for Sidebar::display()
 
     public function testDisplayShouldInvokeDynamicSidebar()
     {
@@ -112,7 +112,7 @@ class SidebarTest extends PHPUnit_Framework_TestCase
         $sidebar->display();
     }
 
-    // Tests for SidebarInterface::register()
+    // Tests for Sidebar::register()
 
     public function testRegisterShouldInvokeRegisterSidebarWithOptions()
     {
@@ -142,7 +142,7 @@ class SidebarTest extends PHPUnit_Framework_TestCase
         $sidebar->register();
     }
 
-    // Tests for SidebarInterface::unregister()
+    // Tests for Sidebar::unregister()
 
     public function testUnregisterShouldInvokeUnregisterSidebar()
     {

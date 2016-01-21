@@ -30,7 +30,7 @@ class PostTypeTest extends PHPUnit_Framework_TestCase
         Monkey::tearDownWP();
     }
 
-    // Tests for PostTypeInterface::getName()
+    // Tests for PostType::getName()
 
     public function testGetNameShouldReturnTheName()
     {
@@ -39,7 +39,7 @@ class PostTypeTest extends PHPUnit_Framework_TestCase
         $this->assertSame('test-post-type', $postType->getName());
     }
 
-    // Tests for PostTypeInterface::getOptions()
+    // Tests for PostType::getOptions()
 
     public function testGetOptionsShouldReturnTheOptions()
     {
@@ -48,7 +48,7 @@ class PostTypeTest extends PHPUnit_Framework_TestCase
         $this->assertSame(['menu_name' => 'Test Post Type'], $postType->getOptions());
     }
 
-    // Tests for PostTypeInterface::register()
+    // Tests for PostType::register()
 
     public function testRegisterShouldInvokeRegisterPostTypeWithOptions()
     {
@@ -84,7 +84,7 @@ class PostTypeTest extends PHPUnit_Framework_TestCase
         $postType->register();
     }
 
-    // Tests for PostTypeInterface::unregister()
+    // Tests for PostType::unregister()
 
     /**
      * @expectedException \LogicException
