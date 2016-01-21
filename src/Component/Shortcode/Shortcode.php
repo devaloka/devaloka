@@ -32,22 +32,22 @@ class Shortcode implements ShortcodeInterface
     protected $callable;
 
     /**
-     * @var mixed[] The default options.
+     * @var mixed[] The default attributes.
      */
-    protected $defaultOptions = [];
+    protected $defaultAttributes = [];
 
     /**
      * The constructor.
      *
      * @param string $name The tag name.
      * @param callable $callable The callable for the Shortcode processing.
-     * @param mixed[] $defaultOptions The default options.
+     * @param mixed[] $defaultAttributes The default attributes.
      */
-    public function __construct($name, callable $callable, array $defaultOptions = [])
+    public function __construct($name, callable $callable, array $defaultAttributes = [])
     {
-        $this->name           = $name;
-        $this->callable       = new CallableObject($callable);
-        $this->defaultOptions = $defaultOptions;
+        $this->name              = $name;
+        $this->callable          = new CallableObject($callable);
+        $this->defaultAttributes = $defaultAttributes;
     }
 
     /**
@@ -69,8 +69,8 @@ class Shortcode implements ShortcodeInterface
     /**
      * {@inheritDoc}
      */
-    public function getDefaultOptions()
+    public function getDefaultAttributes()
     {
-        return $this->defaultOptions;
+        return $this->defaultAttributes;
     }
 }

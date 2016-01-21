@@ -78,15 +78,15 @@ class ShortcodeTest extends PHPUnit_Framework_TestCase
         $this->assertSame($function, $shortcode->getCallable());
     }
 
-    // Tests for Shortcode::getDefaultOptions()
+    // Tests for Shortcode::getDefaultAttributes()
 
-    public function testGetGetDefaultOptionsShouldReturnTheDefaultOptions()
+    public function testGetGetDefaultAttributesShouldReturnTheDefaultAttributes()
     {
         $function  = function () {
         };
         $shortcode = new Shortcode('test-shortcode', $function, ['key1' => 'value1', 'key2']);
 
-        $this->assertSame(['key1' => 'value1', 'key2'], $shortcode->getDefaultOptions());
+        $this->assertSame(['key1' => 'value1', 'key2'], $shortcode->getDefaultAttributes());
     }
 
     // Tests for Shortcode::generate()
@@ -115,7 +115,7 @@ class ShortcodeTest extends PHPUnit_Framework_TestCase
         $this->assertSame('[test-shortcode key1="value1" key2 /]', $shortcode->generate());
     }
 
-    public function testGenerateShouldReturnTheShortcodeStringWithOptions()
+    public function testGenerateShouldReturnTheShortcodeStringWithAttributes()
     {
         $function  = function () {
         };
@@ -164,7 +164,7 @@ class ShortcodeTest extends PHPUnit_Framework_TestCase
         $this->assertSame('Test Shortcode', $shortcode->invoke());
     }
 
-    public function testInvokeShouldInvokeDoShortcodeWithOptions()
+    public function testInvokeShouldInvokeDoShortcodeWithAttributes()
     {
         $function  = function () {
         };

@@ -49,39 +49,39 @@ trait ShortcodeTrait
     }
 
     /**
-     * Gets the default options.
+     * Gets the default attributes.
      *
-     * @return mixed[] The default options.
+     * @return mixed[] The default attributes.
      */
-    public function getDefaultOptions()
+    public function getDefaultAttributes()
     {
         return [];
     }
 
     /**
-     * Generates the Shortcode string with the given options and content.
+     * Generates the Shortcode string with the given attributes and content.
      *
-     * @param mixed[] $options The options.
+     * @param mixed[] $attributes The attributes.
      * @param string|null $content The enclosed content.
      *
      * @return string The generated Shortcode string.
      */
-    public function generate(array $options = [], $content = null)
+    public function generate(array $attributes = [], $content = null)
     {
-        $name       = $this->getName();
-        $options    = shortcode_atts($this->getDefaultOptions(), $options, $this->getName());
-        $attributes = implode(
+        $name             = $this->getName();
+        $attributes       = shortcode_atts($this->getDefaultAttributes(), $attributes, $this->getName());
+        $attributesString = implode(
             ' ',
             array_map(
                 function ($value, $key) {
                     return !is_int($key) ? $key . '="' . $value . '"' : $value;
                 },
-                $options,
-                array_keys($options)
+                $attributes,
+                array_keys($attributes)
             )
         );
 
-        $shortcode = '[' . trim($name . ' ' . $attributes);
+        $shortcode = '[' . trim($name . ' ' . $attributesString);
 
         if ($content === null) {
             $shortcode .= ' /]';
@@ -97,14 +97,14 @@ trait ShortcodeTrait
     /**
      * Invokes the Shortcode.
      *
-     * @param mixed[] $options The options.
+     * @param mixed[] $attributes The attributes.
      * @param string|null $content The enclosed content.
      *
      * @return string The processed content.
      */
-    public function invoke(array $options = [], $content = null)
+    public function invoke(array $attributes = [], $content = null)
     {
-        $shortcode = $this->generate($options, $content);
+        $shortcode = $this->generate($attributes, $content);
 
         return do_shortcode($shortcode);
     }

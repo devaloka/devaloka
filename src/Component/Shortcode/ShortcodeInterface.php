@@ -36,12 +36,12 @@ interface ShortcodeInterface
     /**
      * Invokes the Shortcode.
      *
-     * @param mixed[] $options The options.
+     * @param mixed[] $attributes The attributes.
      * @param string|null $content The enclosed content.
      *
      * @return string The processed content.
      */
-    public function invoke(array $options = [], $content = null);
+    public function invoke(array $attributes = [], $content = null);
 
     /**
      * Registers the Shortcode.
