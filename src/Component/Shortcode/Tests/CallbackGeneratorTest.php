@@ -7,8 +7,6 @@ use Ecailles\CallableObject\CallableObject;
 use Mockery;
 use PHPUnit_Framework_TestCase;
 
-require 'testShortcodeCallback.php';
-
 /**
  * Class CallbackGeneratorTest
  *
