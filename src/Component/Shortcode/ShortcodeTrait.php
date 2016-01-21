@@ -44,6 +44,7 @@ trait ShortcodeTrait
     public function getCallable()
     {
         return function () {
+            return '';
         };
     }
 
