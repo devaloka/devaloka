@@ -31,7 +31,7 @@ class CallbackGenerator
      *
      * @return \Closure The generated callback function for the Shortcode.
      */
-    public function generate($callable)
+    public function generate(callable $callable)
     {
         $callable = new CallableObject($callable);
 
