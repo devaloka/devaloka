@@ -1,0 +1,16 @@
+{
+    "version"        : "0.5.3",
+    "repository"     : {
+        "type": "git",
+        "url" : "https://github.com/devaloka/shortcode.git"
+    },
+    "scripts"        : {
+        "lint"       : "remark -u remark-lint README.md",
+        "lint-travis": "remark -f -u remark-lint README.md"
+    },
+    "devDependencies": {
+        "remark"     : "^3.2.0",
+        "remark-lint": "^2.0.0"
+    },
+    "private"        : true
+}
