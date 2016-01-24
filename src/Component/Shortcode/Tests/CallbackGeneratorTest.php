@@ -16,6 +16,14 @@ use PHPUnit_Framework_TestCase;
 class CallbackGeneratorTest extends PHPUnit_Framework_TestCase
 {
     /**
+     * Sets up the test case.
+     */
+    public static function setUpBeforeClass()
+    {
+        require 'testShortcodeCallback.php';
+    }
+
+    /**
      * Sets up a test.
      */
     protected function setUp()
