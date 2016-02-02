@@ -86,12 +86,53 @@ class PostTypeTest extends PHPUnit_Framework_TestCase
 
     // Tests for PostType::unregister()
 
-    /**
-     * @expectedException \LogicException
-     */
-    public function testUnregisterShouldAlwaysThrowLogicException()
+    public function testUnregisterShouldInvokeUnregisterPostType()
     {
-        $postType = new PostType('test-post-type');
+        $postType = Mockery::mock('Devaloka\Component\PostType\PostType', ['test-post-type'])->makePartial()
+            ->shouldAllowMockingProtectedMethods();
+
+        $postType->shouldReceive('supportsUnregistration')
+            ->andReturn(true);
+
+        Monkey::functions()->expect('unregister_post_type')
+            ->with('test-post-type')
+            ->once();
+
+        $postType->unregister();
+    }
+
+    /**
+     * @expectedException \RuntimeException
+     */
+    public function testUnregisterShouldThrowRuntimeExceptionWhenItIsNotSupported()
+    {
+        $postType = Mockery::mock('Devaloka\Component\PostType\PostType', ['test-post-type'])->makePartial()
+            ->shouldAllowMockingProtectedMethods();
+
+        $postType->shouldReceive('supportsUnregistration')
+            ->andReturn(false);
+
+        $postType->unregister();
+    }
+
+    /**
+     * @expectedException \RuntimeException
+     */
+    public function testUnregisterShouldThrowRuntimeExceptionWhenItFailed()
+    {
+        $postType = Mockery::mock('Devaloka\Component\PostType\PostType', ['test-post-type'])->makePartial()
+            ->shouldAllowMockingProtectedMethods();
+
+        $postType->shouldReceive('supportsUnregistration')
+            ->andReturn(true);
+
+        Monkey::functions()->expect('unregister_post_type')
+            ->with('test-post-type')
+            ->once();
+
+        Monkey::functions()->expect('is_wp_error')
+            ->andReturn(true)
+            ->once();
 
         $postType->unregister();
     }

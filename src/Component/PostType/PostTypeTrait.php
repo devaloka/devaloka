@@ -12,7 +12,6 @@
 
 namespace Devaloka\Component\PostType;
 
-use LogicException;
 use RuntimeException;
 
 /**
@@ -54,12 +53,25 @@ trait PostTypeTrait
     /**
      * Unregisters the menu.
      *
-     * @throws LogicException Always throw a LogicException because there are no functions to unregister NavMenu.
+     * @throws RuntimeException If the Post Type cannot be unregistered.
      *
      * @see https://core.trac.wordpress.org/ticket/14761 #14761 (unregister_post_type()) – WordPress Trac
      */
     public function unregister()
     {
-        throw new LogicException('unregister() is not implemented yet.');
+        // Introduced since WordPress 4.5.
+        if (!$this->supportsUnregistration() || is_wp_error(unregister_post_type($this->getName()))) {
+            throw new RuntimeException('Cannot unregister the Post Type.');
+        }
+    }
+
+    /**
+     * Returns whether unregistration is supported.
+     *
+     * @return bool True if unregistration is supported, false otherwise.
+     */
+    protected function supportsUnregistration()
+    {
+        return function_exists('unregister_post_type');
     }
 }

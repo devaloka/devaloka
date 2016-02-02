@@ -43,7 +43,7 @@ interface PostTypeInterface
     /**
      * Unregisters the Post Type.
      *
-     * @throws \LogicException Always throw a LogicException because there are no functions to unregister NavMenu.
+     * @throws \RuntimeException If the Post Type cannot be unregistered.
      */
     public function unregister();
 }
