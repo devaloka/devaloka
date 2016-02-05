@@ -16,12 +16,11 @@ if (!function_exists('devaloka')) {
      */
     function devaloka()
     {
-        /**
-         * @var Devaloka\Devaloka|NullObject $devaloka
-         */
-        $devaloka = array_key_exists('devaloka', $GLOBALS) ? $GLOBALS['devaloka'] : new NullObject();
+        if (defined(WP_DEBUG) && WP_DEBUG && !isset($GLOBALS['devaloka'])) {
+            return new NullObject();
+        }
 
-        return $devaloka;
+        return $GLOBALS['devaloka'];
     }
 }
 
@@ -45,7 +44,11 @@ if (!function_exists('devaloka_get')) {
     {
         $container = devaloka_container();
 
-        return $container->has($id) ? $container->get($id) : new NullObject();
+        if (defined(WP_DEBUG) && WP_DEBUG && !$container->has($id)) {
+            return new NullObject();
+        }
+
+        return $container->get($id);
     }
 }
 
