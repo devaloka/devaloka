@@ -5,8 +5,7 @@
 [![License][license-image]][license-url]
 [![Build Status][travis-image]][travis-url]
 
-A WordPress plugin that provides an implementation of Symfony
-TranslationInterface for WordPress.
+An implementation of Symfony TranslationInterface for WordPress.
 
 ## Features
 
