@@ -5,8 +5,8 @@
         "url" : "https://github.com/devaloka/devaloka.git"
     },
     "scripts"        : {
-        "lint"       : "remark -u remark-lint **/*.md",
-        "lint-travis": "remark -f -u remark-lint **/*.md"
+        "lint"       : "remark **/*.md",
+        "lint-travis": "remark -f **/*.md"
     },
     "devDependencies": {
         "gulp"        : "^3.9.0",
