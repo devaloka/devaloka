@@ -4,7 +4,6 @@
     "type"             : "library",
     "keywords"         : [
         "wordpress",
-        "plugin",
         "templating",
         "template"
     ],
