@@ -55,6 +55,8 @@
         "devaloka/shortcode"           : "self.version",
         "devaloka/sidebar"             : "self.version",
         "devaloka/taxonomy"            : "self.version",
+        "devaloka/templating"          : "self.version",
+        "devaloka/translation"         : "self.version",
         "devaloka/widget"              : "self.version"
     },
     "autoload"         : {
