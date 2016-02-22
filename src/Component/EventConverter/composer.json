@@ -1,0 +1,77 @@
+{
+    "name"             : "devaloka/event-converter",
+    "description"      : "Interchangeably converts all WordPress action/filter to/from EventDispatcher's Event",
+    "type"             : "library",
+    "keywords"         : [
+        "wordpress",
+        "event",
+        "hook",
+        "action",
+        "filter"
+    ],
+    "homepage"         : "https://github.com/devaloka/event-converter",
+    "license"          : [
+        "MIT",
+        "GPL-2.0",
+        "GPL-3.0"
+    ],
+    "minimum-stability": "dev",
+    "prefer-stable"    : true,
+    "authors"          : [
+        {
+            "name"    : "Whizark",
+            "email"   : "devaloka@whizark.com",
+            "homepage": "http://whizark.com",
+            "role"    : "Developer"
+        }
+    ],
+    "support"          : {
+        "email" : "devaloka@whizark.com",
+        "issues": "https://github.com/devaloka/devaloka/issues",
+        "wiki"  : "https://github.com/devaloka/devaloka/wiki",
+        "source": "https://github.com/devaloka/event-converter"
+    },
+    "require"          : {
+        "php"                          : ">=5.5.9",
+        "pimple/pimple"                : "~3.0",
+        "symfony/event-dispatcher"     : "~3.0",
+        "devaloka/event-dispatcher"    : "~0.7.0",
+        "devaloka/dependency-injection": "~0.7.0",
+        "ecailles/callable-object"     : "~1.0.0"
+    },
+    "require-dev"      : {
+        "squizlabs/php_codesniffer": "^2.5.0"
+    },
+    "autoload"         : {
+        "psr-4": {
+            "Devaloka\\Component\\EventConverter\\": ""
+        }
+    },
+    "scripts"          : {
+        "test"       : [
+            "vendor/bin/phpcs --colors"
+        ],
+        "test-travis": [
+            "vendor/bin/phpcs --colors"
+        ]
+    },
+    "archive"          : {
+        "exclude": [
+            ".gitignore",
+            ".gitattributes",
+            ".mailmap",
+            ".editorconfig",
+            "package.json",
+            "npm-shrinkwrap.json",
+            ".remarkrc",
+            "composer.json",
+            "phpcs.xml.dist",
+            ".travis.yml"
+        ]
+    },
+    "extra"            : {
+        "branch-alias": {
+            "dev-master": "0.7.x-dev"
+        }
+    }
+}

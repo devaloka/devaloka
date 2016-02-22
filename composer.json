@@ -50,6 +50,7 @@
     "replace"          : {
         "devaloka/dependency-injection": "self.version",
         "devaloka/event-dispatcher"    : "self.version",
+        "devaloka/event-converter"     : "self.version",
         "devaloka/nav-menu"            : "self.version",
         "devaloka/post-type"           : "self.version",
         "devaloka/shortcode"           : "self.version",
