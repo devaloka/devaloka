@@ -50,12 +50,12 @@
     "replace"          : {
         "devaloka/dependency-injection": "self.version",
         "devaloka/event-dispatcher"    : "self.version",
+        "devaloka/nav-menu"            : "self.version",
         "devaloka/post-type"           : "self.version",
-        "devaloka/taxonomy"            : "self.version",
         "devaloka/shortcode"           : "self.version",
         "devaloka/sidebar"             : "self.version",
-        "devaloka/widget"              : "self.version",
-        "devaloka/nav-menu"            : "self.version"
+        "devaloka/taxonomy"            : "self.version",
+        "devaloka/widget"              : "self.version"
     },
     "autoload"         : {
         "exclude-from-classmap": [
