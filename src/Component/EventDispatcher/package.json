@@ -9,7 +9,7 @@
         "lint-travis": "remark -f README.md"
     },
     "devDependencies": {
-        "remark"     : "^4.0.0",
+        "remark"     : "^4.2.0",
         "remark-lint": "^3.0.0"
     },
     "private"        : true
