@@ -1,5 +1,6 @@
 {
     "version"        : "0.5.3",
+    "main"           : "./devaloka.php",
     "repository"     : {
         "type": "git",
         "url" : "https://github.com/devaloka/devaloka.git"
