@@ -15,7 +15,7 @@ use Symfony\Component\Translation\TranslatorInterface;
 /**
  * Interface TranslatorAwareInterface
  *
- * @package Devaloka\Translation
+ * @package Devaloka\Component\Translation
  *
  * @codeCoverageIgnore
  */

@@ -24,7 +24,7 @@ class TranslationProvider implements ServiceProviderInterface
 {
     public function register(Devaloka $devaloka, ContainerInterface $container)
     {
-        $container->add('translator.class', 'Devaloka\\Translation\\WordPressTranslator');
+        $container->add('translator.class', 'Devaloka\\Component\\Translation\\WordPressTranslator');
         $container->add(
             'translator',
             function (Container $container) {

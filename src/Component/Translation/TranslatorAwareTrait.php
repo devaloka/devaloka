@@ -15,7 +15,7 @@ use Symfony\Component\Translation\TranslatorInterface;
 /**
  * Class TranslatorAwareTrait
  *
- * @package Devaloka\Translation
+ * @package Devaloka\Component\Translation
  */
 trait TranslatorAwareTrait
 {
