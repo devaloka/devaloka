@@ -29,7 +29,7 @@ class EventConverterProvider implements ServiceProviderInterface, EventListenerP
      */
     public function register(Devaloka $devaloka, ContainerInterface $container)
     {
-        $container->add('event_converter.class', 'Devaloka\\EventConverter\\EventConverter');
+        $container->add('event_converter.class', 'Devaloka\\Component\\EventConverter\\EventConverter');
 
         $container->add(
             'event_converter',
@@ -40,7 +40,7 @@ class EventConverterProvider implements ServiceProviderInterface, EventListenerP
 
         $container->add(
             'event_converter.converter_listener.class',
-            'Devaloka\\EventConverter\\EventListener\\EventConverterListener'
+            'Devaloka\\Component\\EventConverter\\EventListener\\EventConverterListener'
         );
 
         $container->add(
