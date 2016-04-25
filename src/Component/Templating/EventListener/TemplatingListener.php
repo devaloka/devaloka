@@ -8,18 +8,16 @@
  * @license MIT
  */
 
-namespace Devaloka\Templating\EventListener;
+namespace Devaloka\Component\Templating\EventListener;
 
 use Symfony\Component\EventDispatcher\EventSubscriberInterface;
 use Devaloka\Component\EventDispatcher\EventDispatcherAwareInterface;
 use Devaloka\Component\EventDispatcher\EventDispatcherAwareTrait;
-use Devaloka\Component\Templating\TemplatingInterface;
-use Devaloka\Component\Templating\InjectableTemplatingInterface;
 
 /**
  * Class TemplatingListener
  *
- * @package Devaloka\Templating\EventListener
+ * @package Devaloka\Component\Templating\EventListener
  */
 class TemplatingListener implements EventSubscriberInterface, EventDispatcherAwareInterface
 {

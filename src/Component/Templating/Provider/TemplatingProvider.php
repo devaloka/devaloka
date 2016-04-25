@@ -21,7 +21,7 @@ use Devaloka\Component\EventDispatcher\EventDispatcherAwareInterface;
 /**
  * Class TemplatingProvider
  *
- * @package Devaloka\Templating\Provider
+ * @package Devaloka\Component\Templating\Provider
  */
 class TemplatingProvider implements ServiceProviderInterface, EventListenerProviderInterface
 {
@@ -31,7 +31,7 @@ class TemplatingProvider implements ServiceProviderInterface, EventListenerProvi
     public function register(Devaloka $devaloka, ContainerInterface $container)
     {
         // Templating
-        $container->add('templating.class', 'Devaloka\\Templating\\Templating');
+        $container->add('templating.class', 'Devaloka\\Component\\Templating\\Templating');
         $container->add(
             'templating',
             function (Container $container) {
@@ -44,7 +44,7 @@ class TemplatingProvider implements ServiceProviderInterface, EventListenerProvi
         // Event Listener
         $container->add(
             'templating.templating_listener.class',
-            'Devaloka\\Templating\\EventListener\\TemplatingListener'
+            'Devaloka\\Component\\Templating\\EventListener\\TemplatingListener'
         );
         $container->add(
             'templating.templating_listener',
