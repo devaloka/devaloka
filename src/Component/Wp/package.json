@@ -1,0 +1,16 @@
+{
+    "version"        : "0.5.2",
+    "repository"     : {
+        "type": "git",
+        "url" : "https://github.com/devaloka/wp.git"
+    },
+    "scripts"        : {
+        "lint"       : "remark README.md",
+        "lint-travis": "remark -f README.md"
+    },
+    "devDependencies": {
+        "remark"     : "^4.2.0",
+        "remark-lint": "^3.2.0"
+    },
+    "private"        : true
+}

@@ -1,0 +1,73 @@
+{
+    "name"             : "devaloka/wp",
+    "description"      : "Provides WordPress objects as services",
+    "type"             : "library",
+    "keywords"         : [
+        "wordpress",
+        "wpdb",
+        "wp_embed",
+        "wp_styles",
+        "wp_scripts",
+        "wp_widget_factory"
+    ],
+    "homepage"         : "https://github.com/devaloka/wp",
+    "license"          : [
+        "MIT",
+        "GPL-2.0",
+        "GPL-3.0"
+    ],
+    "minimum-stability": "dev",
+    "prefer-stable"    : true,
+    "authors"          : [
+        {
+            "name"    : "Whizark",
+            "email"   : "devaloka@whizark.com",
+            "homepage": "http://whizark.com",
+            "role"    : "Developer"
+        }
+    ],
+    "support"          : {
+        "email" : "devaloka@whizark.com",
+        "issues": "https://github.com/devaloka/devaloka/issues",
+        "wiki"  : "https://github.com/devaloka/devaloka/wiki",
+        "source": "https://github.com/devaloka/wp"
+    },
+    "require"          : {
+        "php": ">=5.5.9"
+    },
+    "require-dev"      : {
+        "squizlabs/php_codesniffer": "^2.5.1"
+    },
+    "autoload"         : {
+        "psr-4": {
+            "Devaloka\\Component\\Wp\\": ""
+        }
+    },
+    "scripts"          : {
+        "test"       : [
+            "vendor/bin/phpcs --colors"
+        ],
+        "test-travis": [
+            "vendor/bin/phpcs --colors"
+        ]
+    },
+    "archive"          : {
+        "exclude": [
+            ".gitignore",
+            ".gitattributes",
+            ".mailmap",
+            ".editorconfig",
+            "package.json",
+            "npm-shrinkwrap.json",
+            ".remarkrc",
+            "composer.json",
+            "phpcs.xml.dist",
+            ".travis.yml"
+        ]
+    },
+    "extra"            : {
+        "branch-alias": {
+            "dev-master": "0.7.x-dev"
+        }
+    }
+}
