@@ -58,8 +58,8 @@ class WordPressProvider implements ServiceProviderInterface, BootableProviderInt
                     return $GLOBALS['wp_embed'];
                 }
 
-                $wpEmbed         = new WP_Embed();
-                $GLOBALS['wpdb'] = $wpEmbed;
+                $wpEmbed             = new WP_Embed();
+                $GLOBALS['wp_embed'] = $wpEmbed;
 
                 return $wpEmbed;
             }
