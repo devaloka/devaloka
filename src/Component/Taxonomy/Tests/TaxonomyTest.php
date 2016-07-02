@@ -180,6 +180,14 @@ class TaxonomyTest extends PHPUnit_Framework_TestCase
             ->with('test-taxonomy')
             ->andReturn(true);
 
+        Monkey::functions()->expect('register_taxonomy_for_object_type')
+            ->with('test-taxonomy', 'test-string-object-type')
+            ->once();
+
+        Monkey::functions()->expect('register_taxonomy_for_object_type')
+            ->with('test-taxonomy', 'test-post-type')
+            ->once();
+
         $taxonomy->addObjectType('test-string-object-type');
         $taxonomy->addObjectType($postType);
 

@@ -98,6 +98,9 @@ class PostTypeTest extends PHPUnit_Framework_TestCase
             ->with('test-post-type')
             ->once();
 
+        Monkey::functions()->expect('is_wp_error')
+            ->andReturn(false);
+
         $postType->unregister();
     }
 
