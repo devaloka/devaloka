@@ -29,12 +29,12 @@
         "source": "https://github.com/devaloka/shortcode"
     },
     "require"          : {
-        "php"                     : ">=5.5.9",
+        "php"                     : ">=5.6.0",
         "ecailles/callable-object": "~1.0.1"
     },
     "require-dev"      : {
         "squizlabs/php_codesniffer": "^2.6.2",
-        "phpunit/phpunit"          : "^4.8 || ^5.4",
+        "phpunit/phpunit"          : "^5.4",
         "mockery/mockery"          : "^0.9.5",
         "brain/monkey"             : "^1.4.0",
         "satooshi/php-coveralls"   : "^1.0.1"

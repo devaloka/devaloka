@@ -32,7 +32,7 @@
         "source": "https://github.com/devaloka/event-converter"
     },
     "require"          : {
-        "php"                          : ">=5.5.9",
+        "php"                          : ">=5.6.0",
         "pimple/pimple"                : "~3.0",
         "symfony/event-dispatcher"     : "~3.1",
         "devaloka/event-dispatcher"    : "~0.7.0",
