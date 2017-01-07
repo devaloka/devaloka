@@ -8,7 +8,7 @@
  * @license MIT
  */
 
-namespace Devaloka\Templating\Provider;
+namespace Devaloka\Component\Templating\Provider;
 
 use Pimple\Container;
 use Symfony\Component\EventDispatcher\EventDispatcherInterface;
