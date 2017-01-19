@@ -19,7 +19,7 @@ namespace Devaloka\Component\Templating;
  */
 interface TemplatingInterface
 {
-    public function partial($slug, $name = null, array $vars = []);
+    public function partial($slug, $name = '', array $vars = []);
 
-    public function partialOnly($slug, $name = null, array $vars = []);
+    public function partialOnly($slug, $name = '', array $vars = []);
 }

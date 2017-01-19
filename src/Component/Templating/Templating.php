@@ -25,12 +25,12 @@ class Templating implements InjectableTemplatingInterface
 
     /**
      * @param string $slug
-     * @param string|null $name
+     * @param string $name
      * @param mixed[] $vars
      *
      * @return bool
      */
-    public function partial($slug, $name = null, array $vars = [])
+    public function partial($slug, $name = '', array $vars = [])
     {
         $templateFile = $this->getTemplate($slug, $name);
 
@@ -50,12 +50,11 @@ class Templating implements InjectableTemplatingInterface
         call_user_func($environment, $templateFile, $vars, $globals);
     }
 
-    public function getTemplate($slug, $name = null)
+    public function getTemplate($slug, $name = '')
     {
         do_action('get_template_part_' . $slug, $slug, $name);
 
         $templates = [];
-        $name      = (string) $name;
 
         if ($name !== '') {
             $templates[] = $slug . '-' . $name . '.php';
@@ -76,7 +75,7 @@ class Templating implements InjectableTemplatingInterface
      *
      * @return bool
      */
-    public function partialOnly($slug, $name = null, array $vars = [])
+    public function partialOnly($slug, $name = '', array $vars = [])
     {
         $templateFile = $this->getTemplate($slug, $name);
 
