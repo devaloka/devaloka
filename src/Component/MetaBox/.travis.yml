@@ -1,0 +1,57 @@
+sudo: false
+
+language: php
+
+php:
+    - '5.6'
+    - '7.0'
+    - '7.1'
+    - hhvm
+
+matrix:
+    fast_finish: true
+    allow_failures:
+        - php: hhvm
+
+cache:
+    directories:
+        - node_modules
+        - $HOME/.composer/cache/files
+
+before_install:
+    - rm -rf "$HOME/.nvm"
+    - git clone https://github.com/creationix/nvm.git "$HOME/.nvm"
+    - source "$HOME/.nvm/nvm.sh"
+    - nvm install node
+    - npm config set progress false
+    - npm install -g npm
+    - |
+        if [ "$TRAVIS_PULL_REQUEST" = "true" ]; then
+            phpenv config-rm xdebug.ini
+        fi
+    - composer self-update
+
+install:
+    - npm install
+    - composer install --prefer-source
+
+script:
+    - npm run-script lint-travis
+    - composer test-travis
+
+after_success:
+    - |
+        if [ "$TRAVIS_PULL_REQUEST" = "false" ]; then
+            vendor/bin/coveralls --verbose
+        fi
+
+notifications:
+    email: false
+
+    slack:
+        on_pull_requests: false
+        on_start: never
+        on_success: never
+        on_failure: change
+        # rooms:
+        #     - secure: <encrypted_value>

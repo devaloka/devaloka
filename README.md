@@ -34,6 +34,7 @@ A WordPress plugin that brings DI Container, Event Dispatcher to WordPress.
 
 *   [DependencyInjection](https://github.com/devaloka/dependency-injection)
 *   [EventDispatcher](https://github.com/devaloka/event-dispatcher)
+*   MetaBox
 *   [NavMenu](https://github.com/devaloka/nav-menu)
 *   [PostType](https://github.com/devaloka/post-type)
 *   [Shortcode](https://github.com/devaloka/shortcode)
