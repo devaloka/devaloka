@@ -97,7 +97,8 @@ class WordPressProvider implements ServiceProviderInterface, BootableProviderInt
         );
 
         // WP_Rewrite
-        $container->add('wp_rewrite',
+        $container->add(
+            'wp_rewrite',
             function (Container $container) {
                 if ($GLOBALS['wp_rewrite']) {
                     return $GLOBALS['wp_rewrite'];
