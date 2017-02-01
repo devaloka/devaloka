@@ -13,6 +13,7 @@
 namespace Devaloka\Component\Wp\Provider;
 
 use Pimple\Container;
+use WP_Rewrite;
 use wpdb;
 use WP_Embed;
 use WP_Styles;
@@ -92,6 +93,20 @@ class WordPressProvider implements ServiceProviderInterface, BootableProviderInt
                 $GLOBALS['wp_scripts'] = $wpScripts;
 
                 return $wpScripts;
+            }
+        );
+
+        // WP_Rewrite
+        $container->add('wp_rewrite',
+            function (Container $container) {
+                if ($GLOBALS['wp_rewrite']) {
+                    return $GLOBALS['wp_rewrite'];
+                }
+
+                $wpRewrite             = new WP_Rewrite();
+                $GLOBALS['wp_rewrite'] = $wpRewrite;
+
+                return $wpRewrite;
             }
         );
 
