@@ -16,6 +16,7 @@ use Ecailles\CallableObject\CallableObject;
 use Symfony\Component\EventDispatcher\EventSubscriberInterface;
 use Devaloka\Component\EventConverter\FilterFunction;
 use Devaloka\Component\EventConverter\EventConverter;
+use WP_Hook;
 
 /**
  * Class EventConverterListener
@@ -57,8 +58,11 @@ class EventConverterListener implements EventSubscriberInterface
                 continue;
             }
 
-            foreach ($GLOBALS['wp_filter'][$eventName] as $priority => $indices) {
-                foreach ($indices as $index => $value) {
+            /** @var WP_Hook $hooks */
+            $hook = $GLOBALS['wp_filter'][$eventName];
+
+            foreach ($hook as $priority => $callbacks) {
+                foreach ($callbacks as $index => $value) {
                     if ($value['function'] === [$this, __FUNCTION__]) {
                         continue;
                     }
@@ -72,12 +76,12 @@ class EventConverterListener implements EventSubscriberInterface
                         $value['accepted_args']
                     );
 
-                    $GLOBALS['wp_filter'][$eventName][$priority][$index]['function'] = $this->converter->create(
+                    $callbacks[$priority][$index]['function'] = $this->converter->create(
                         current_filter(),
                         $filterFunction
                     );
 
-                    $GLOBALS['wp_filter'][$eventName][$priority][$index]['_devaloka_event_converter'] = true;
+                    $callbacks[$priority][$index]['_devaloka_event_converter'] = true;
                 }
             }
         }
