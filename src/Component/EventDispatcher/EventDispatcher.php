@@ -65,9 +65,9 @@ class EventDispatcher implements EventDispatcherInterface
 
         $filters = ($eventName !== null) ? [$eventName => $GLOBALS['wp_filter'][$eventName]] : $GLOBALS['wp_filter'];
 
-        foreach ($filters as $tag => $priorities) {
-            foreach ($priorities as $priority => $indices) {
-                foreach ($indices as $index => $value) {
+        foreach ($filters as $tag => $hook) {
+            foreach ($hook as $priority => $callbacks) {
+                foreach ($callbacks as $index => $value) {
                     $listeners[$priority] = $value['function'];
                 }
             }
@@ -118,10 +118,10 @@ class EventDispatcher implements EventDispatcherInterface
             return;
         }
 
-        foreach ($GLOBALS['wp_filter'][$eventName] as $priority => $functions) {
-            $function = _wp_filter_build_unique_id($eventName, $listener, $priority);
+        foreach ($GLOBALS['wp_filter'][$eventName] as $priority => $callbacks) {
+            $callbackId = _wp_filter_build_unique_id($eventName, $listener, $priority);
 
-            if (isset($functions[$function])) {
+            if (isset($callbacks[$priority][$callbackId])) {
                 remove_action($eventName, $listener, $priority);
             }
         }
@@ -133,10 +133,10 @@ class EventDispatcher implements EventDispatcherInterface
             return null;
         }
 
-        foreach ($GLOBALS['wp_filter'][$eventName] as $priority => $functions) {
-            $function = _wp_filter_build_unique_id($eventName, $listener, $priority);
+        foreach ($GLOBALS['wp_filter'][$eventName] as $priority => $callbacks) {
+            $callbackId = _wp_filter_build_unique_id($eventName, $listener, $priority);
 
-            if (isset($functions[$function])) {
+            if (isset($callbacks[$priority][$callbackId])) {
                 return $priority;
             }
         }
