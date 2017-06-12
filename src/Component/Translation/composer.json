@@ -37,7 +37,7 @@
         "symfony/translation": "~3.2"
     },
     "require-dev"      : {
-        "squizlabs/php_codesniffer": "^2.7.1"
+        "squizlabs/php_codesniffer": "^2.9.1"
     },
     "autoload"         : {
         "psr-4": {

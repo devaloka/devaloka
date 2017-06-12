@@ -33,7 +33,7 @@
         "ecailles/callable-object": "~1.0.1"
     },
     "require-dev"      : {
-        "squizlabs/php_codesniffer": "^2.7.1",
+        "squizlabs/php_codesniffer": "^2.9.1",
         "phpunit/phpunit"          : "^5.7",
         "brain/monkey"             : "~2.0.2",
         "satooshi/php-coveralls"   : "^1.0.1"
