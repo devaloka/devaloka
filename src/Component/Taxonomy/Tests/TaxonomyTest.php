@@ -20,7 +20,7 @@ class TaxonomyTest extends PHPUnit_Framework_TestCase
      */
     protected function setUp()
     {
-        Monkey::setUpWP();
+        Monkey\setUp();
     }
 
     /**
@@ -28,7 +28,7 @@ class TaxonomyTest extends PHPUnit_Framework_TestCase
      */
     protected function tearDown()
     {
-        Monkey::tearDownWP();
+        Monkey\tearDown();
     }
 
     // Tests for Taxonomy::getName()
@@ -55,15 +55,15 @@ class TaxonomyTest extends PHPUnit_Framework_TestCase
     {
         $taxonomy = new Taxonomy('test-taxonomy');
 
-        Monkey::functions()->expect('taxonomy_exists')
+        Monkey\Functions\expect('taxonomy_exists')
             ->with('test-taxonomy')
             ->andReturn(false);
 
-        Monkey::functions()->expect('get_taxonomy')
+        Monkey\Functions\expect('get_taxonomy')
             ->with('test-taxonomy')
             ->andReturn(false);
 
-        Monkey::functions()->expect('register_taxonomy_for_object_type')
+        Monkey\Functions\expect('register_taxonomy_for_object_type')
             ->never();
 
         $taxonomy->addObjectType('test-string-object-type');
@@ -80,15 +80,15 @@ class TaxonomyTest extends PHPUnit_Framework_TestCase
         $postType = $this->createPostType();
         $taxonomy = new Taxonomy('test-taxonomy');
 
-        Monkey::functions()->expect('taxonomy_exists')
+        Monkey\Functions\expect('taxonomy_exists')
             ->with('test-taxonomy')
             ->andReturn(false);
 
-        Monkey::functions()->expect('get_taxonomy')
+        Monkey\Functions\expect('get_taxonomy')
             ->with('test-taxonomy')
             ->andReturn(false);
 
-        Monkey::functions()->expect('register_taxonomy_for_object_type')
+        Monkey\Functions\expect('register_taxonomy_for_object_type')
             ->never();
 
         $taxonomy->addObjectType($postType);
@@ -101,19 +101,19 @@ class TaxonomyTest extends PHPUnit_Framework_TestCase
         $postType = $this->createPostType();
         $taxonomy = new Taxonomy('test-taxonomy');
 
-        Monkey::functions()->expect('taxonomy_exists')
+        Monkey\Functions\expect('taxonomy_exists')
             ->with('test-taxonomy')
             ->andReturn(true);
 
         // With string.
-        Monkey::functions()->expect('register_taxonomy_for_object_type')
+        Monkey\Functions\expect('register_taxonomy_for_object_type')
             ->with('test-taxonomy', 'test-object-type')
             ->once();
 
         $taxonomy->addObjectType('test-object-type');
 
         // With PostTypeInterface.
-        Monkey::functions()->expect('register_taxonomy_for_object_type')
+        Monkey\Functions\expect('register_taxonomy_for_object_type')
             ->with('test-taxonomy', 'test-post-type')
             ->once();
 
@@ -126,15 +126,15 @@ class TaxonomyTest extends PHPUnit_Framework_TestCase
     {
         $taxonomy = new Taxonomy('test-taxonomy');
 
-        Monkey::functions()->expect('taxonomy_exists')
+        Monkey\Functions\expect('taxonomy_exists')
             ->with('test-taxonomy')
             ->andReturn(false);
 
-        Monkey::functions()->expect('get_taxonomy')
+        Monkey\Functions\expect('get_taxonomy')
             ->with('test-taxonomy')
             ->andReturn(false);
 
-        Monkey::functions()->expect('unregister_taxonomy_for_object_type')
+        Monkey\Functions\expect('unregister_taxonomy_for_object_type')
             ->never();
 
         $taxonomy->addObjectType('test-string-object-type');
@@ -151,15 +151,15 @@ class TaxonomyTest extends PHPUnit_Framework_TestCase
         $postType = $this->createPostType();
         $taxonomy = new Taxonomy('test-taxonomy');
 
-        Monkey::functions()->expect('taxonomy_exists')
+        Monkey\Functions\expect('taxonomy_exists')
             ->with('test-taxonomy')
             ->andReturn(false);
 
-        Monkey::functions()->expect('get_taxonomy')
+        Monkey\Functions\expect('get_taxonomy')
             ->with('test-taxonomy')
             ->andReturn(false);
 
-        Monkey::functions()->expect('unregister_taxonomy_for_object_type')
+        Monkey\Functions\expect('unregister_taxonomy_for_object_type')
             ->never();
 
         $taxonomy->addObjectType($postType);
@@ -176,26 +176,26 @@ class TaxonomyTest extends PHPUnit_Framework_TestCase
         $postType = $this->createPostType();
         $taxonomy = new Taxonomy('test-taxonomy');
 
-        Monkey::functions()->expect('taxonomy_exists')
+        Monkey\Functions\expect('taxonomy_exists')
             ->with('test-taxonomy')
             ->andReturn(true);
 
-        Monkey::functions()->expect('register_taxonomy_for_object_type')
+        Monkey\Functions\expect('register_taxonomy_for_object_type')
             ->with('test-taxonomy', 'test-string-object-type')
             ->once();
 
-        Monkey::functions()->expect('register_taxonomy_for_object_type')
+        Monkey\Functions\expect('register_taxonomy_for_object_type')
             ->with('test-taxonomy', 'test-post-type')
             ->once();
 
         $taxonomy->addObjectType('test-string-object-type');
         $taxonomy->addObjectType($postType);
 
-        Monkey::functions()->expect('unregister_taxonomy_for_object_type')
+        Monkey\Functions\expect('unregister_taxonomy_for_object_type')
             ->with('test-taxonomy', 'test-string-object-type')
             ->once();
 
-        Monkey::functions()->expect('unregister_taxonomy_for_object_type')
+        Monkey\Functions\expect('unregister_taxonomy_for_object_type')
             ->with('test-taxonomy', 'test-post-type')
             ->once();
 
@@ -210,11 +210,11 @@ class TaxonomyTest extends PHPUnit_Framework_TestCase
         $postType = $this->createPostType();
         $taxonomy = new Taxonomy('test-taxonomy');
 
-        Monkey::functions()->expect('taxonomy_exists')
+        Monkey\Functions\expect('taxonomy_exists')
             ->with('test-taxonomy')
             ->andReturn(false);
 
-        Monkey::functions()->expect('get_taxonomy')
+        Monkey\Functions\expect('get_taxonomy')
             ->with('test-taxonomy')
             ->andReturn($this->getGlobalTaxonomy());
 
@@ -232,18 +232,18 @@ class TaxonomyTest extends PHPUnit_Framework_TestCase
         $postType = $this->createPostType();
         $taxonomy = new Taxonomy('test-taxonomy', ['menu_name' => 'Taxonomy']);
 
-        Monkey::functions()->expect('taxonomy_exists')
+        Monkey\Functions\expect('taxonomy_exists')
             ->with('test-taxonomy')
             ->andReturn(false);
 
         $taxonomy->addObjectType('test-string-object-type');
         $taxonomy->addObjectType($postType);
 
-        Monkey::functions()->expect('register_taxonomy')
+        Monkey\Functions\expect('register_taxonomy')
             ->with('test-taxonomy', ['test-string-object-type', 'test-post-type'], ['menu_name' => 'Taxonomy'])
             ->once();
 
-        Monkey::functions()->expect('is_wp_error')
+        Monkey\Functions\expect('is_wp_error')
             ->andReturn(false);
 
         $taxonomy->register();
@@ -256,8 +256,8 @@ class TaxonomyTest extends PHPUnit_Framework_TestCase
     {
         $taxonomy = new Taxonomy('test-taxonomy');
 
-        Monkey::functions()->expect('register_taxonomy');
-        Monkey::functions()->expect('is_wp_error')
+        Monkey\Functions\expect('register_taxonomy');
+        Monkey\Functions\expect('is_wp_error')
             ->andReturn(true);
 
         $taxonomy->register();
@@ -270,19 +270,19 @@ class TaxonomyTest extends PHPUnit_Framework_TestCase
         $postType = $this->createPostType();
         $taxonomy = new Taxonomy('test-taxonomy');
 
-        Monkey::functions()->expect('taxonomy_exists')
+        Monkey\Functions\expect('taxonomy_exists')
             ->with('test-taxonomy')
             ->andReturn(false);
 
         $taxonomy->addObjectType('test-string-object-type');
         $taxonomy->addObjectType($postType);
 
-        Monkey::functions()->expect('unregister_taxonomy_for_object_type')
+        Monkey\Functions\expect('unregister_taxonomy_for_object_type')
             ->with('test-taxonomy', 'test-string-object-type')
             ->andReturn(true)
             ->once();
 
-        Monkey::functions()->expect('unregister_taxonomy_for_object_type')
+        Monkey\Functions\expect('unregister_taxonomy_for_object_type')
             ->with('test-taxonomy', 'test-post-type')
             ->andReturn(true)
             ->once();
@@ -297,13 +297,13 @@ class TaxonomyTest extends PHPUnit_Framework_TestCase
     {
         $taxonomy = new Taxonomy('test-taxonomy');
 
-        Monkey::functions()->expect('taxonomy_exists')
+        Monkey\Functions\expect('taxonomy_exists')
             ->with('test-taxonomy')
             ->andReturn(false);
 
         $taxonomy->addObjectType('test-string-object-type');
 
-        Monkey::functions()->expect('unregister_taxonomy_for_object_type')
+        Monkey\Functions\expect('unregister_taxonomy_for_object_type')
             ->andReturn(false);
 
         $taxonomy->unregister();

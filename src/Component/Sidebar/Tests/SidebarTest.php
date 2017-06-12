@@ -19,7 +19,7 @@ class SidebarTest extends PHPUnit_Framework_TestCase
      */
     protected function setUp()
     {
-        Monkey::setUpWP();
+        Monkey\setUp();
     }
 
     /**
@@ -27,7 +27,7 @@ class SidebarTest extends PHPUnit_Framework_TestCase
      */
     protected function tearDown()
     {
-        Monkey::tearDownWP();
+        Monkey\tearDown();
     }
 
     // Tests for Sidebar::getId()
@@ -54,11 +54,11 @@ class SidebarTest extends PHPUnit_Framework_TestCase
     {
         $sidebar = new Sidebar('test-sidebar');
 
-        Monkey::functions()->expect('is_active_sidebar')
+        Monkey\Functions\expect('is_active_sidebar')
             ->with('test-sidebar')
             ->andReturn(true);
 
-        Monkey::functions()->expect('dynamic_sidebar')
+        Monkey\Functions\expect('dynamic_sidebar')
             ->with('test-sidebar')
             ->once();
 
@@ -69,11 +69,11 @@ class SidebarTest extends PHPUnit_Framework_TestCase
     {
         $sidebar = new Sidebar('test-sidebar');
 
-        Monkey::functions()->expect('is_active_sidebar')
+        Monkey\Functions\expect('is_active_sidebar')
             ->with('test-sidebar')
             ->andReturn(false);
 
-        Monkey::functions()->expect('dynamic_sidebar')
+        Monkey\Functions\expect('dynamic_sidebar')
             ->never();
 
         $html = $sidebar->render();
@@ -87,11 +87,11 @@ class SidebarTest extends PHPUnit_Framework_TestCase
     {
         $sidebar = new Sidebar('test-sidebar');
 
-        Monkey::functions()->expect('is_active_sidebar')
+        Monkey\Functions\expect('is_active_sidebar')
             ->with('test-sidebar')
             ->andReturn(true);
 
-        Monkey::functions()->expect('dynamic_sidebar')
+        Monkey\Functions\expect('dynamic_sidebar')
             ->with('test-sidebar')
             ->once();
 
@@ -102,11 +102,11 @@ class SidebarTest extends PHPUnit_Framework_TestCase
     {
         $sidebar = new Sidebar('test-sidebar');
 
-        Monkey::functions()->expect('is_active_sidebar')
+        Monkey\Functions\expect('is_active_sidebar')
             ->with('test-sidebar')
             ->andReturn(false);
 
-        Monkey::functions()->expect('dynamic_sidebar')
+        Monkey\Functions\expect('dynamic_sidebar')
             ->never();
 
         $sidebar->display();
@@ -121,7 +121,7 @@ class SidebarTest extends PHPUnit_Framework_TestCase
 
         $sidebar = new Sidebar('test-sidebar', $options);
 
-        Monkey::functions()->expect('register_sidebar')
+        Monkey\Functions\expect('register_sidebar')
             ->with($expectedOptions)
             ->once();
 
@@ -135,7 +135,7 @@ class SidebarTest extends PHPUnit_Framework_TestCase
 
         $sidebar = new Sidebar('test-sidebar', $options);
 
-        Monkey::functions()->expect('register_sidebar')
+        Monkey\Functions\expect('register_sidebar')
             ->with($expectedOptions)
             ->once();
 
@@ -148,7 +148,7 @@ class SidebarTest extends PHPUnit_Framework_TestCase
     {
         $sidebar = new Sidebar('test-sidebar');
 
-        Monkey::functions()->expect('unregister_sidebar')
+        Monkey\Functions\expect('unregister_sidebar')
             ->with('test-sidebar')
             ->once();
 

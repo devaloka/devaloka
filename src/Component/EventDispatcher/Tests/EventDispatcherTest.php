@@ -20,7 +20,7 @@ class EventDispatcherTest extends PHPUnit_Framework_TestCase
      */
     protected function setUp()
     {
-        Monkey::setUpWP();
+        Monkey\setUp();
     }
 
     /**
@@ -28,7 +28,7 @@ class EventDispatcherTest extends PHPUnit_Framework_TestCase
      */
     protected function tearDown()
     {
-        Monkey::tearDownWP();
+        Monkey\tearDown();
     }
 
     public function testDispatchShouldApplyFilters()
@@ -41,8 +41,8 @@ class EventDispatcherTest extends PHPUnit_Framework_TestCase
         $dispatcher = new EventDispatcher();
         $eventName  = 'action';
 
-        Monkey::actions()->expectFired($eventName)->never();
-        Monkey::filters()->expectApplied($eventName)->never();
+        Monkey\Actions\expectDone($eventName)->never();
+        Monkey\Filters\expectApplied($eventName)->never();
 
         // Without Event object.
         $result = $dispatcher->dispatch($eventName);
@@ -65,8 +65,8 @@ class EventDispatcherTest extends PHPUnit_Framework_TestCase
         $dispatcher = new EventDispatcher();
         $eventName  = 'filter';
 
-        Monkey::actions()->expectFired($eventName)->never();
-        Monkey::filters()->expectApplied($eventName)->never();
+        Monkey\Actions\expectDone($eventName)->never();
+        Monkey\Filters\expectApplied($eventName)->never();
 
         // Withouth Event object.
         $result = $dispatcher->dispatch($eventName);
@@ -148,12 +148,12 @@ class EventDispatcherTest extends PHPUnit_Framework_TestCase
             ->once()
             ->ordered();
 
-        Monkey::actions()->expectAdded('event1')
+        Monkey\Actions\expectAdded('event1')
             ->with([$subscriber, 'onEvent1'], 10, PHP_INT_MAX)
             ->once()
             ->ordered();
 
-        Monkey::actions()->expectAdded('event2')
+        Monkey\Actions\expectAdded('event2')
             ->with([$subscriber, 'onEvent2'], 11, PHP_INT_MAX)
             ->once()
             ->ordered();
@@ -188,7 +188,7 @@ class EventDispatcherTest extends PHPUnit_Framework_TestCase
     {
         $dispatcher = new EventDispatcher();
 
-        Monkey::actions()->expectAdded($eventName)
+        Monkey\Actions\expectAdded($eventName)
             ->with($listener, $priority, PHP_INT_MAX)
             ->once();
 
@@ -216,7 +216,7 @@ class EventDispatcherTest extends PHPUnit_Framework_TestCase
     {
         // $dispatcher = new EventDispatcher();
 
-        // Monkey::actions()->expectAdded($eventName)
+        // Monkey\Actions\expectAdded($eventName)
         //     ->with($listener, $priority, PHP_INT_MAX)
         //     ->once();
 

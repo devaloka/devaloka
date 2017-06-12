@@ -28,7 +28,7 @@ class CallbackGeneratorTest extends PHPUnit_Framework_TestCase
      */
     protected function setUp()
     {
-        Monkey::setUpWP();
+        Monkey\setUp();
     }
 
     /**
@@ -36,7 +36,7 @@ class CallbackGeneratorTest extends PHPUnit_Framework_TestCase
      */
     protected function tearDown()
     {
-        Monkey::tearDownWP();
+        Monkey\tearDown();
     }
 
     // Tests for CallbackGenerator::createReflection()
@@ -138,7 +138,7 @@ class CallbackGeneratorTest extends PHPUnit_Framework_TestCase
 
         $attributes = ['atts1' => null, 'atts2' => 'value2'];
 
-        Monkey::functions()->expect('shortcode_atts')
+        Monkey\Functions\expect('shortcode_atts')
             ->andReturn($attributes);
 
         $wrapper = $generator->generate($closure);

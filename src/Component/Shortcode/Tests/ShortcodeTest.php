@@ -19,7 +19,7 @@ class ShortcodeTest extends PHPUnit_Framework_TestCase
      */
     protected function setUp()
     {
-        Monkey::setUpWP();
+        Monkey\setUp();
     }
 
     /**
@@ -27,7 +27,7 @@ class ShortcodeTest extends PHPUnit_Framework_TestCase
      */
     protected function tearDown()
     {
-        Monkey::tearDownWP();
+        Monkey\tearDown();
     }
 
     // Tests for Shortcode::__toString()
@@ -38,7 +38,7 @@ class ShortcodeTest extends PHPUnit_Framework_TestCase
         };
         $shortcode = new Shortcode('test-shortcode', $function);
 
-        Monkey::functions()->expect('shortcode_atts')
+        Monkey\Functions\expect('shortcode_atts')
             ->andReturn([]);
 
         $this->assertSame('[test-shortcode /]', (string) $shortcode);
@@ -50,7 +50,7 @@ class ShortcodeTest extends PHPUnit_Framework_TestCase
         };
         $shortcode = new Shortcode('test-shortcode', $function, ['key1' => 'value1', 'key2']);
 
-        Monkey::functions()->expect('shortcode_atts')
+        Monkey\Functions\expect('shortcode_atts')
             ->andReturn(['key1' => 'value1', 'key2']);
 
         $this->assertSame('[test-shortcode key1="value1" key2 /]', (string) $shortcode);
@@ -97,7 +97,7 @@ class ShortcodeTest extends PHPUnit_Framework_TestCase
         };
         $shortcode = new Shortcode('test-shortcode', $function);
 
-        Monkey::functions()->expect('shortcode_atts')
+        Monkey\Functions\expect('shortcode_atts')
             ->andReturn([]);
 
         $this->assertSame('[test-shortcode /]', $shortcode->generate());
@@ -109,7 +109,7 @@ class ShortcodeTest extends PHPUnit_Framework_TestCase
         };
         $shortcode = new Shortcode('test-shortcode', $function, ['key1' => 'value1', 'key2']);
 
-        Monkey::functions()->expect('shortcode_atts')
+        Monkey\Functions\expect('shortcode_atts')
             ->andReturn(['key1' => 'value1', 'key2']);
 
         $this->assertSame('[test-shortcode key1="value1" key2 /]', $shortcode->generate());
@@ -121,7 +121,7 @@ class ShortcodeTest extends PHPUnit_Framework_TestCase
         };
         $shortcode = new Shortcode('test-shortcode', $function, ['key1' => 'value1', 'key2']);
 
-        Monkey::functions()->expect('shortcode_atts')
+        Monkey\Functions\expect('shortcode_atts')
             ->andReturn(['key1' => 'value2', 'key2', 'key3']);
 
         $this->assertSame(
@@ -136,7 +136,7 @@ class ShortcodeTest extends PHPUnit_Framework_TestCase
         };
         $shortcode = new Shortcode('test-shortcode', $function, ['key1' => 'value1', 'key2']);
 
-        Monkey::functions()->expect('shortcode_atts')
+        Monkey\Functions\expect('shortcode_atts')
             ->andReturn(['key1' => 'value1', 'key2']);
 
         $this->assertSame(
@@ -153,10 +153,10 @@ class ShortcodeTest extends PHPUnit_Framework_TestCase
         };
         $shortcode = new Shortcode('test-shortcode', $function, ['key1' => 'value1', 'key2']);
 
-        Monkey::functions()->expect('shortcode_atts')
+        Monkey\Functions\expect('shortcode_atts')
             ->andReturn(['key1' => 'value1', 'key2']);
 
-        Monkey::functions()->expect('do_shortcode')
+        Monkey\Functions\expect('do_shortcode')
             ->with('[test-shortcode key1="value1" key2 /]')
             ->andReturn('Test Shortcode')
             ->once();
@@ -170,10 +170,10 @@ class ShortcodeTest extends PHPUnit_Framework_TestCase
         };
         $shortcode = new Shortcode('test-shortcode', $function, ['key1' => 'value1', 'key2']);
 
-        Monkey::functions()->expect('shortcode_atts')
+        Monkey\Functions\expect('shortcode_atts')
             ->andReturn(['key1' => 'value2', 'key2', 'key3']);
 
-        Monkey::functions()->expect('do_shortcode')
+        Monkey\Functions\expect('do_shortcode')
             ->with('[test-shortcode key1="value2" key2 key3 /]')
             ->andReturn('Test Shortcode')
             ->once();
@@ -187,10 +187,10 @@ class ShortcodeTest extends PHPUnit_Framework_TestCase
         };
         $shortcode = new Shortcode('test-shortcode', $function, ['key1' => 'value1', 'key2']);
 
-        Monkey::functions()->expect('shortcode_atts')
+        Monkey\Functions\expect('shortcode_atts')
             ->andReturn(['key1' => 'value1', 'key2']);
 
-        Monkey::functions()->expect('do_shortcode')
+        Monkey\Functions\expect('do_shortcode')
             ->with('[test-shortcode key1="value1" key2]content[/test-shortcode]')
             ->andReturn('Test Shortcode')
             ->once();
@@ -206,7 +206,7 @@ class ShortcodeTest extends PHPUnit_Framework_TestCase
         };
         $shortcode = new Shortcode('test-shortcode', $function);
 
-        Monkey::functions()->expect('add_shortcode')
+        Monkey\Functions\expect('add_shortcode')
             ->with('test-shortcode', $function)
             ->once();
 
@@ -221,7 +221,7 @@ class ShortcodeTest extends PHPUnit_Framework_TestCase
         };
         $shortcode = new Shortcode('test-shortcode', $function);
 
-        Monkey::functions()->expect('remove_shortcode')
+        Monkey\Functions\expect('remove_shortcode')
             ->with('test-shortcode')
             ->once();
 

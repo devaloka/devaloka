@@ -19,7 +19,7 @@ class PostTypeTest extends PHPUnit_Framework_TestCase
      */
     protected function setUp()
     {
-        Monkey::setUpWP();
+        Monkey\setUp();
     }
 
     /**
@@ -27,7 +27,7 @@ class PostTypeTest extends PHPUnit_Framework_TestCase
      */
     protected function tearDown()
     {
-        Monkey::tearDownWP();
+        Monkey\tearDown();
     }
 
     // Tests for PostType::getName()
@@ -55,11 +55,11 @@ class PostTypeTest extends PHPUnit_Framework_TestCase
         $options  = ['menu_name' => 'Test Post Type'];
         $postType = new PostType('test-post-type', $options);
 
-        Monkey::functions()->expect('register_post_type')
+        Monkey\Functions\expect('register_post_type')
             ->with('test-post-type', $options)
             ->once();
 
-        Monkey::functions()->expect('is_wp_error')
+        Monkey\Functions\expect('is_wp_error')
             ->andReturn(false);
 
         $postType->register();
@@ -73,11 +73,11 @@ class PostTypeTest extends PHPUnit_Framework_TestCase
         $options  = ['menu_name' => 'Test Post Type'];
         $postType = new PostType('test-post-type', $options);
 
-        Monkey::functions()->expect('register_post_type')
+        Monkey\Functions\expect('register_post_type')
             ->with('test-post-type', $options)
             ->once();
 
-        Monkey::functions()->expect('is_wp_error')
+        Monkey\Functions\expect('is_wp_error')
             ->andReturn(true)
             ->once();
 
@@ -94,11 +94,11 @@ class PostTypeTest extends PHPUnit_Framework_TestCase
         $postType->shouldReceive('supportsUnregistration')
             ->andReturn(true);
 
-        Monkey::functions()->expect('unregister_post_type')
+        Monkey\Functions\expect('unregister_post_type')
             ->with('test-post-type')
             ->once();
 
-        Monkey::functions()->expect('is_wp_error')
+        Monkey\Functions\expect('is_wp_error')
             ->andReturn(false);
 
         $postType->unregister();
@@ -129,11 +129,11 @@ class PostTypeTest extends PHPUnit_Framework_TestCase
         $postType->shouldReceive('supportsUnregistration')
             ->andReturn(true);
 
-        Monkey::functions()->expect('unregister_post_type')
+        Monkey\Functions\expect('unregister_post_type')
             ->with('test-post-type')
             ->once();
 
-        Monkey::functions()->expect('is_wp_error')
+        Monkey\Functions\expect('is_wp_error')
             ->andReturn(true)
             ->once();
 

@@ -19,7 +19,7 @@ class NavMenuTest extends PHPUnit_Framework_TestCase
      */
     protected function setUp()
     {
-        Monkey::setUpWP();
+        Monkey\setUp();
     }
 
     /**
@@ -27,7 +27,7 @@ class NavMenuTest extends PHPUnit_Framework_TestCase
      */
     protected function tearDown()
     {
-        Monkey::tearDownWP();
+        Monkey\tearDown();
     }
 
     // Tests for NavMenu::getLocation()
@@ -66,7 +66,7 @@ class NavMenuTest extends PHPUnit_Framework_TestCase
 
         $navMenu = new NavMenu('location', 'Description.', $defaultOptions);
 
-        Monkey::functions()->expect('wp_nav_menu')
+        Monkey\Functions\expect('wp_nav_menu')
             ->with($expectedOptions)
             ->andReturn('<nav></nav>')
             ->once();
@@ -83,7 +83,7 @@ class NavMenuTest extends PHPUnit_Framework_TestCase
 
         $navMenu = new NavMenu('location', 'Description.', $defaultOptions);
 
-        Monkey::functions()->expect('wp_nav_menu')
+        Monkey\Functions\expect('wp_nav_menu')
             ->with($expectedOptions)
             ->andReturn('<nav></nav>')
             ->once();
@@ -99,7 +99,7 @@ class NavMenuTest extends PHPUnit_Framework_TestCase
 
         $navMenu = new NavMenu('location', 'Description.');
 
-        Monkey::functions()->expect('wp_nav_menu')
+        Monkey\Functions\expect('wp_nav_menu')
             ->with($expectedOptions)
             ->andReturn('<nav></nav>')
             ->once();
@@ -118,7 +118,7 @@ class NavMenuTest extends PHPUnit_Framework_TestCase
 
         $navMenu = new NavMenu('location', 'Description.', $defaultOptions);
 
-        Monkey::functions()->expect('wp_nav_menu')
+        Monkey\Functions\expect('wp_nav_menu')
             ->with($expectedOptions)
             ->once();
 
@@ -132,7 +132,7 @@ class NavMenuTest extends PHPUnit_Framework_TestCase
 
         $navMenu = new NavMenu('location', 'Description.', $defaultOptions);
 
-        Monkey::functions()->expect('wp_nav_menu')
+        Monkey\Functions\expect('wp_nav_menu')
             ->with($expectedOptions)
             ->once();
 
@@ -145,7 +145,7 @@ class NavMenuTest extends PHPUnit_Framework_TestCase
 
         $navMenu = new NavMenu('location', 'Description.');
 
-        Monkey::functions()->expect('wp_nav_menu')
+        Monkey\Functions\expect('wp_nav_menu')
             ->with($expectedOptions)
             ->once();
 
@@ -158,7 +158,7 @@ class NavMenuTest extends PHPUnit_Framework_TestCase
     {
         $navMenu = new NavMenu('location', 'Description.');
 
-        Monkey::functions()->expect('register_nav_menu')
+        Monkey\Functions\expect('register_nav_menu')
             ->with('location', 'Description.')
             ->once();
 
@@ -171,7 +171,7 @@ class NavMenuTest extends PHPUnit_Framework_TestCase
     {
         $navMenu = new NavMenu('location', 'Description.');
 
-        Monkey::functions()->expect('unregister_nav_menu')
+        Monkey\Functions\expect('unregister_nav_menu')
             ->with('location')
             ->andReturn(true)
             ->once();
@@ -186,7 +186,7 @@ class NavMenuTest extends PHPUnit_Framework_TestCase
     {
         $navMenu = new NavMenu('location', 'Description.');
 
-        Monkey::functions()->expect('unregister_nav_menu')
+        Monkey\Functions\expect('unregister_nav_menu')
             ->with('location')
             ->andReturn(false)
             ->once();

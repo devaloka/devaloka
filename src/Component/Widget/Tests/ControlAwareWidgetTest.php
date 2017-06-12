@@ -18,7 +18,7 @@ class ControlAwareWidgetTest extends PHPUnit_Framework_TestCase
      */
     protected function setUp()
     {
-        Monkey::setUpWP();
+        Monkey\setUp();
     }
 
     /**
@@ -26,7 +26,7 @@ class ControlAwareWidgetTest extends PHPUnit_Framework_TestCase
      */
     protected function tearDown()
     {
-        Monkey::tearDownWP();
+        Monkey\tearDown();
     }
 
     public function testGetControlOptionsShouldReturnPropertyValue()
